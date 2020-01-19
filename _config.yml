@@ -1,0 +1,93 @@
+title:            Tech Blog
+description:      Study note of Software Engineer
+
+#disqus
+disqus: True
+disqus_shortname: https-sujin729-github-io-infinityandbeyound729-1
+reading_time:     false # if true, shows the estimated reading time for a post
+words_per_minute: 200
+logo:             images/logo.png # logo visible in the topbar
+excerpt_separator: <!--more-->
+
+#site domain
+url: https://mg729.github.io/
+
+# menu
+menu:
+  - title: 'Home'
+    url: '/'
+  - title: 'About'
+    url: '/about'
+  - title: 'Tags'
+    url: '/tags'
+  - title: 'Categories'
+    url: '/categories'
+    type: 'categories'
+
+# Owner/author information
+owner:
+  name:           MG
+  site:           https://github.com/mg729
+#  avatar:         images/avatar.jpg
+#  bio:            "Work as a Software Engineer & Major in Computer Sicence"
+#  email:          iammg729@gmail.com
+
+#  # GitHub nick for use in follow button in author block.
+#  github: mg729
+
+# Social networking links used in author block underneath posts. Update and remove as you like.
+#social:
+#  - title: "github"
+#    url: "https://github.com/mg729"
+#  - title: "linkedin"
+#    url: "https://br.linkedin.com/in/aronbordin"
+#  - title: "youtube"
+#    url: "https://www.youtube.com/channel/UCfnSek-9HPWOx5e2pH7VFgg"
+
+# Background image to be tiled on all pages
+background:
+
+# Analytics and webmaster tools stuff goes here
+google_analytics: UA-150394229-1
+google_verify: gVozgHxPlD9PG7tjjp_HrTOh86oq7DyHo8Y1CbW4MKY
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+# bing_verify:
+
+timezone:    Asia/Seoul
+locale:      ko_KR
+future:      true
+highlighter: rouge
+markdown:    kramdown
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# https://jekyllrb-ko.github.io/docs/permalinks/
+permalink:   /:categories/:year/:month/:day/:title/
+
+# Amount of post to show on home page
+paginate: 3
+
+# if true, shows the floatting share buttons
+#float_share: true
+
+# Default extensions
+post_ext: md
+page_ext: md
+# Found in _templates/
+post_layout: post
+page_layout: page
+# Format titles with titlecase
+titlecase: true
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
+#  - jekyll-gist
+#  - jekyll-avatar
+#  - jekyll-seo-tag
+
+include: [".htaccess"]
+exclude: ["demo/*", "lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+gems: [jekyll-sitemap, jekyll-feed, jekyll-paginate]

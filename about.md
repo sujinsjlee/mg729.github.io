@@ -1,0 +1,10 @@
+---
+layout: page
+title: About
+permalink: /about/
+comments: false
+---
+
+welcome to my blog  
+ABOUT section *will be updated soon*  
+[github link](https://github.com/mg729/mg729.github.io). 
