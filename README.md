@@ -11,7 +11,6 @@ To Infinity and Beyond.
 - [Data Structure](#DataStructure)
 - [Algorithm](#Algorithm)
 - [Git](#Git)
-- [Network](#Network)
 - [License](#License)
 
 ## C++
@@ -30,11 +29,6 @@ To Infinity and Beyond.
 ## Git
 * Git commamd line
 * GitHub Pages
-
-
-## Network
-*will be updated soon* :)
-
 
 ## License
 
