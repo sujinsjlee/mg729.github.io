@@ -3,7 +3,6 @@ This Tech Blog is Study Note of MG.
 per ardua ad astra.  
 To Infinity and Beyond.  
 
-
 ## Contents
 
 - [C++](#C++)
@@ -30,8 +29,7 @@ To Infinity and Beyond.
 * Git commamd line
 * GitHub Pages
 
-## License
-
-The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).  
-The blod theme is forked from http://aronbordin.com/neo-hpstr-jekyll-theme
+### License
+###### The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).  
+###### The blog theme is forked from http://aronbordin.com/neo-hpstr-jekyll-theme
 
