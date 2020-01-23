@@ -20,7 +20,7 @@ _Array stores a fixed-size sequential collection of elements of the same type._
 ## 배열의 단점  
 * 데이터가 가변적인 경우 데이터의 추가, 삭제 쉽지 않음  
 고정된 크기의 공간이 선언되어있기 때문에 배열의 최대 길이를 모른다면 새로운 데이터 추가가 어려움  
-데이처를 삭제하고나서 기존 뒤의 데이터를 앞으로 당겨여하는 문제가 있음   
+데이터를 삭제하고나서 기존 뒤의 데이터를 앞으로 당겨여하는 문제가 있음   
 * 배열타입의 데이터 선언할 때 미리 최대 길이의 size를 지정해야함  
 
 ## 예제 (C++)
@@ -31,8 +31,8 @@ _Array stores a fixed-size sequential collection of elements of the same type._
 
 int main()
 {
-	char dataset[][70] = {"Jennifer Anniston, Mrs. Jen",
-		"Courtney Cox, Miss. Cox",
+	char dataset[][70] = {"Jennifer Anniston, Ms. Jen",
+		"Courtney Cox, Ms. Cox",
 		"Lisa Kudrow, Ms. Kudrow",
 		"Matthew Perry, Mr. Perry (Metthew)",
 		"David Schwimmer, Mr. Schwimmer",
