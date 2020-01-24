@@ -18,11 +18,11 @@ menu:
     url: '/'
   - title: 'About'
     url: '/about'
-  - title: 'Tags'
-    url: '/tags'
   - title: 'Categories'
     url: '/categories'
     type: 'categories'
+#  - title: 'Tags'
+#    url: '/tags'
 
 # Owner/author information
 owner:
