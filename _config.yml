@@ -28,17 +28,16 @@ menu:
 owner:
   name:           MG
   site:           https://github.com/mg729
-#  avatar:         images/avatar.jpg
-#  bio:            "Work as a Software Engineer & Major in Computer Sicence"
-#  email:          iammg729@gmail.com
-
-#  # GitHub nick for use in follow button in author block.
-#  github: mg729
+  avatar:         images/avatar.jpg
+  bio:            "Be useful and Be kind"
+  email:          iammg729@gmail.com
+# GitHub nick for use in follow button in author block.
+  github: mg729
 
 # Social networking links used in author block underneath posts. Update and remove as you like.
-#social:
-#  - title: "github"
-#    url: "https://github.com/mg729"
+social:
+  - title: "github"
+    url: "https://github.com/mg729"
 #  - title: "linkedin"
 #    url: "https://br.linkedin.com/in/aronbordin"
 #  - title: "youtube"
