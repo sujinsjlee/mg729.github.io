@@ -19,7 +19,7 @@ categories: [Data Structure]
 
 ##  queue - C++ STL Container  
 [c++ queue](https://en.cppreference.com/w/cpp/container/queue).  
-{% highlight c++ %}
+```c++
 #include <iostream>
 #include <queue>
 using namespace std;
@@ -40,7 +40,7 @@ int main()
     cout << q1.front() <<endl; //20  
     
 }
-{% endhighlight %}
+```
 
 ##  Priority Queue  
 [c++ priority queue](https://en.cppreference.com/w/cpp/container/priority_queue).  
