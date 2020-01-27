@@ -8,10 +8,8 @@ categories: [Data Structure]
 ---
 
 ##  Linked List (연결리스트의 구조)
-<figure>
-	<a href="https://en.wikipedia.org/wiki/Linked_list#/media/File:Singly-linked-list.svg"><img src="https://en.wikipedia.org/wiki/Linked_list#/media/File:Singly-linked-list.svg" alt=""></a>
-	<figcaption>Singly Linked List 단순 연결 리스트</figcaption>
-</figure>
+![Singly Linked List 단순 연결 리스트](https://en.wikipedia.org/wiki/Linked_list#/media/File:Singly-linked-list.svg)
+
 > **동적으로 크기가 변할 수 있고 삭제나 삽입 시에 데이터를 이동할 필요가 없는 구조**  
 <ul>
 <li>배열의 단점을 해결하는 자료구조</li>
@@ -42,7 +40,8 @@ categories: [Data Structure]
 
 
 ## Node 구현
-1. Struct를 이용하여 Node만들기  
+1. Struct를 이용하여 Node만들기    
+
 ```c++  
 #incldue <iostream>
 using namespace std;
@@ -52,11 +51,13 @@ struct node
     int data;
     node *next;
 }
-```   
+```  
+
 2. Class를 이용하여 linked_list 만들기  
 * linked list에서 first node는 반드시 알고 있어야합니다.      
     * first node를 통해서 전체 list에 접근하므로    
-    * first node를 **head**라고 함     
+    * first node를 **head**라고 함   
+
 ```c++  
 #include <iostream>
 using namespace std;
@@ -314,7 +315,9 @@ int main()
 }
 ``` 
 
-## Linked List - 데이터 사이에 데이터 추가하기 - 연결 재구성  
+## Linked List - 데이터 사이에 데이터 추가하기 
+- 연결 재구성
+
 ```c++
 /*
 Concatenating or joining two linked lists 
@@ -582,12 +585,12 @@ int main()
 ```
 
 ---
+---
+---
 
 ##  Doubly Linked List 이중 연결 리스트 
-<figure>
-	<a href="https://en.wikipedia.org/wiki/Linked_list#/media/File:Doubly-linked-list.svg"><img src="https://en.wikipedia.org/wiki/Linked_list#/media/File:Doubly-linked-list.svg" alt=""></a>
-	<figcaption>Doubly Linked List 다중 연결 리스트</figcaption>
-</figure> 
+![Doubly Linked List 다중 연결 리스트](https://en.wikipedia.org/wiki/Linked_list#/media/File:Doubly-linked-list.svg)
+
 * 더블 링크드 리스트 (Doubly Linked list) 구조  
    * singly linked list는 데이터 탐색시 head 노드부터 tail까지 탐색을 해야함 -> 원하는 데이터가 뒤에 있다면?
      * <u>노드 탐색이 <b>양쪽</b>으로 가능한</u> *Double Linked list*    
