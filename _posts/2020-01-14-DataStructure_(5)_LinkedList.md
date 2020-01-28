@@ -66,7 +66,6 @@ struct node
 * singly linked list에서 first node는 반드시 알고 있어야합니다.      
     * first node를 통해서 전체 list에 접근하므로    
     * first node를 **head**라고 함  
-
 ```c++  
 #include <iostream>
 using namespace std;
@@ -94,7 +93,8 @@ int main()
     LinkedList l;
     return 0;
 }
-```    
+```
+{: .notice}    
 <!--
 * expected **';'** after struct definition     
 * expected **';'** after class definition  
@@ -103,7 +103,7 @@ int main()
     * node* head, tail; //(x)
 	* node *head, *tail; //(o)
 -->
-{: .notice}
+
 
 ## 데이터추가
 ```c++
@@ -153,7 +153,7 @@ int main()
     return 0;
 }
 ```
-`node *temp = new node;`    
+`node *temp = new node;`  
 <!--* By new operator, allocate the space for the node-->    
 * 새로운 node 객체 생성  
 `temp->data = n;`  
@@ -170,6 +170,7 @@ int main()
 * 새로운 노드는 새로운 tail노드    
 <!--* 이 부분을 `temp-> tail->next;` 라고 하면 안됩니다-->
 {: .notice}
+
 
 ## 데이터출력  
 ```c++
@@ -231,8 +232,8 @@ int main()
 }
 ```
 `temp = head;`  
-* temp = **this**->head;  
-* 현재 객체의 head node  
+	* temp = **this**->head;  
+	* 현재 객체의 head node  
 {: .notice}  
 
 ## Node연결  
@@ -329,9 +330,7 @@ int main()
 ```  
 {: .notice}  
 
-## 데이터삽입  
-
-- 연결 재구성   
+## 데이터삽입    
 ```c++
 #include <iostream>
 using namespace std;
@@ -431,6 +430,7 @@ public:
         a->next = temp; //***
     }
 };
+
 int main()
 {
     LinkedList la;
