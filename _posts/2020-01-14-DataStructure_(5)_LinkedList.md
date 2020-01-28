@@ -8,11 +8,8 @@ categories: [Data Structure]
 ---
 
 ##  Linked List (단순연결리스트의 구조)  
-<table align="center"><tr><td align="center" width="9999">  
- <img src = "/images/Singly-linked-list.png" align = "center">   
-
+ ![sindly_linked_list](/images/Singly-linked-list.png)  
  *[singly linked list](https://en.wikipedia.org/wiki/Linked_list)* 
- </td></tr></table>
 
 > **동적으로 크기가 변할 수 있고 삭제나 삽입 시에 데이터를 이동할 필요가 없는 구조**  
 <ul>
@@ -54,11 +51,7 @@ categories: [Data Structure]
 
 
 ## Node&LinkedList클래스
-<details><summary>Show C++ code</summary>
-<p>
-
 1. Struct를 이용하여 Node만들기  
-
 ```c++  
 #incldue <iostream>
 using namespace std;
@@ -69,7 +62,6 @@ struct node
     node *next;
 }
 ```  
-
 2. Class를 이용하여 linked_list 만들기  
 * singly linked list에서 first node는 반드시 알고 있어야합니다.      
     * first node를 통해서 전체 list에 접근하므로    
@@ -111,14 +103,9 @@ int main()
     * node* head, tail; //(x)
 	* node *head, *tail; //(o)
 -->
-
-</p>
-</details>
+{: .notice}
 
 ## 데이터추가
-<details><summary>Show C++ code</summary>
-<p>
-
 ```c++
 #include <iostream>
 using namespace std;
@@ -166,7 +153,6 @@ int main()
     return 0;
 }
 ```  
-
 `node *temp = new node;`    
 <!--* By new operator, allocate the space for the node-->    
 * 새로운 node 객체 생성  
@@ -187,13 +173,9 @@ int main()
 <!--new node is the new 'tail'-->  
 * 새로운 노드는 새로운 tail노드    
 <!--* 이 부분을 `temp-> tail->next;` 라고 하면 안됩니다-->
-</p>
-</details>
+{: .notice}
 
 ## 데이터출력  
-<details><summary>Show C++ code</summary>
-<p>
-
 ```c++
 #include <iostream>
 using namespace std;
@@ -252,19 +234,12 @@ int main()
     return 0;
 }
 ```  
-
 `temp = head;`  
 * temp = **this**->head;  
 * 현재 객체의 head node  
-
-</p>
-</details>
-
+{: .notice}  
 
 ## Node연결  
-<details><summary>Show C++ code</summary>
-<p>
-
 ```c++
 #include <iostream>
 using namespace std;
@@ -356,16 +331,10 @@ int main()
     return 0;
 }
 ```  
- 
-</p>
-</details>
+{: .notice}  
 
-## 데이터삽입   
-<details><summary>Show C++ code</summary>
-<p>
-
-- 연결 재구성
-
+## 데이터삽입 
+- 연결 재구성 
 ```c++
 #include <iostream>
 using namespace std;
@@ -485,14 +454,9 @@ int main()
     return 0;
 }
 ```  
-
-</p>
-</details>
+{: .notice}  
 
 ## 데이터삭제  
-<details><summary>Show C++ code</summary>
-<p>
-
 ```c++
 #include <iostream>
 using namespace std;
@@ -639,14 +603,9 @@ int main()
 }
 
 ```  
-
-</p>
-</details>
+{: .notice}
 
 ## 데이터검색    
-<details><summary>Show C++ code</summary>
-<p>
-
 ```c++
 #include <iostream>
 using namespace std;
@@ -812,10 +771,9 @@ int main()
 
     return 0;
 }
-```
+```  
+{: .notice}
 
-</p>
-</details>
 
 ##  **Singly** Linked List - C++ Container library  
 [c++ **forward_list**(*singly linked list*)](https://en.cppreference.com/w/cpp/container/forward_list).  
@@ -853,9 +811,8 @@ int main()
 ---
 
 ##  Doubly Linked List 이중 연결 리스트 
-| ![Doubly Linked List 다중 연결 리스트](/images/Doubly-linked-list.png) |  
-|:--:|   
-| *[doubly linked list](https://en.wikipedia.org/wiki/Linked_list#Doubly_linked_list)* |  
+![Doubly Linked List 다중 연결 리스트](/images/Doubly-linked-list.png)  
+*[doubly linked list](https://en.wikipedia.org/wiki/Linked_list#Doubly_linked_list)*
 
 * 더블 링크드 리스트 (Doubly Linked list) 구조  
    * singly linked list는 데이터 탐색시 head 노드부터 tail까지 탐색을 해야함 -> 원하는 데이터가 뒤에 있다면?
