@@ -7,8 +7,10 @@ tags: [Data Structure, Linked List]
 categories: [Data Structure]
 ---
 
-##  Linked List (연결리스트의 구조)
-![Singly Linked List 단순 연결 리스트](/images/Singly-linked-list.png)
+##  Linked List (단순연결리스트의 구조)
+|![Singly Linked List 단순 연결 리스트](/images/Singly-linked-list.png)|
+|:--:| 
+| *[singly linked list](https://en.wikipedia.org/wiki/Linked_list)* |
 
 > **동적으로 크기가 변할 수 있고 삭제나 삽입 시에 데이터를 이동할 필요가 없는 구조**  
 <ul>
@@ -37,11 +39,23 @@ categories: [Data Structure]
    * 연결정보를 찾는 시간이 필요하므로 접근 속도가 느림  
    * 중단 데이터 삭제시, 앞뒤 데이터의 연결을 재구성해야함  
 
+# C++ Code
+* [Linked List C++ code](https://www.codesdope.com/blog/article/c-linked-lists-in-c-singly-linked-list/)  
+* *Below C++ code is for __Singly Linked List__*
+> [Node 구현 & Linked List class 구현](#Node&LinkedList클래스)   
+> [Linked List 에 데이터 추가하기](#데이터추가)  
+> [Linked List 데이터 출력하기](#데이터출력)  
+> [Node 와 Node를 연결하기](#Node연결)  
+> [Linked List 데이터 사이에 데이터 추가하기](#데이터삽입)  
+> [데이터 삭제하기](#데이터삭제)  
+> [데이터 검색하기](#데이터검색)  
 
 
-## Node 구현
+## Node&LinkedList클래스
+<details><summary>Show C++ code</summary>
+<p>
+
 1. Struct를 이용하여 Node만들기    
-
 ```c++  
 #incldue <iostream>
 using namespace std;
@@ -52,12 +66,10 @@ struct node
     node *next;
 }
 ```  
-
 2. Class를 이용하여 linked_list 만들기  
-* linked list에서 first node는 반드시 알고 있어야합니다.      
+* singly linked list에서 first node는 반드시 알고 있어야합니다.      
     * first node를 통해서 전체 list에 접근하므로    
     * first node를 **head**라고 함   
-
 ```c++  
 #include <iostream>
 using namespace std;
@@ -86,8 +98,23 @@ int main()
     return 0;
 }
 ```    
+<!--
+* expected **';'** after struct definition     
+* expected **';'** after class definition  
+* class LinkedList **()**  : () is unqualified  
+* `node* head, tail;` : tail은 node*가 아니라 node타입으로 선언됨  
+    * node* head, tail; //(x)
+	* node *head, *tail; //(o)
+-->  
+{: .notice}
 
-## Linked List - 데이터 **추가**하기
+</p>
+</details>
+
+## 데이터추가
+<details><summary>Show C++ code</summary>
+<p>
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -110,21 +137,19 @@ public:
     }
     void add_node(int n)
     {
-    	node *temp = new node; //By new operator, allocate the space for the node
-    	                       //Now, 'temp' points to a node
-    	temp->data = n;        //input the value 'n' to the 'data' of 'temp'
-    	temp->next = nullptr;  //represent that node is the last node --> pointer address will be nullptr 
-    	
-    	if(head == nullptr)  //no linked list yet, so current node will be the 'head' and 'tail' both.
-    	                     // as it is the last element right now
+    	node *temp = new node; 
+    	temp->data = n;
+    	temp->next = nullptr;  
+
+    	if(head == nullptr)  //no linked list yet, so current node will be the 'head' and 'tail' both. (as it is the last element right now) 
     	{
     		head = temp;
     		tail = temp;
 		}
 		else  //already have a linked list and we have to add the node at the end of the linked list.
 		{
-			tail->next = temp;  //new node(temp) will go after 'tail'
-			tail = tail->next; //new node is the new 'tail'
+			tail->next = temp;
+			tail = tail->next;
 		}
 	}
 };
@@ -137,10 +162,35 @@ int main()
     return 0;
 }
 ```  
-`node *temp = new node;` :  By new operator, allocate the space for the node  
+`node *temp = new node;`    
+<!--* By new operator, allocate the space for the node-->    
+* 새로운 node 객체 생성  
 
+`temp->data = n;`  
+<!--* input the value 'n' to the 'data' of 'temp'-->  
+* temp 노드의 data에 n값 입력  
 
-## Linked List - 데이터 **출력**하기
+`temp->next = nullptr;`  
+<!--* represent that node is the last node : pointer address will be nullptr-->    
+* temp노드가 마지막 노드  
+
+`tail->next = temp;`  
+<!-- * new node(temp) will go after 'tail'  -->  
+* 새로운 temp node가 tail 노드 다음에 위치
+
+`tail = tail->next;` 
+<!--new node is the new 'tail'-->  
+* 새로운 노드는 새로운 tail노드    
+<!--* 이 부분을 `temp-> tail->next;` 라고 하면 안됩니다-->
+{: .notice} 
+
+</p>
+</details>
+
+## 데이터출력  
+<details><summary>Show C++ code</summary>
+<p>
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -163,12 +213,6 @@ public:
 	}
 	void add_node(int n)
 	{
-//		node *temp; 
-//		note *temp = new node;
-/*
-node *temp; -> node *타입의 temp변수선언
-node *temp = new node; -> node 객체 생성 : 메모리할당 + 생성자 호출 
-*/
 		node *temp = new node; 
 		temp->data = n;
 		temp->next = nullptr;
@@ -205,19 +249,19 @@ int main()
     return 0;
 }
 ``` 
+`temp = head;`  
+* temp = **this**->head;  
+* 현재 객체의 head node  
+{: .notice}
+</p>
+</details>
 
-## Node 와 Node **연결**하기
+
+## Node연결  
+<details><summary>Show C++ code</summary>
+<p>
+
 ```c++
-/*
-Concatenating or joining two linked lists 
-
-1. Traverse over the linked list ‘a’ until the element next to the node is not NULL.
-2. If the element next to the current element is NULL (a->next == NULL) then change the element next to it to ‘b’ (a->next = b).
-
-*** static 멤버 함수
-http://soen.kr/lecture/ccpp/cpp3/27-3-3.htm 
-
-*/
 #include <iostream>
 using namespace std;
 
@@ -239,12 +283,6 @@ public:
 	}
 	void add_node(int n)
 	{
-//		node *temp; 
-//		note *temp = new node;
-/*
-node *temp; -> node *타입의 temp변수선언
-node *temp = new node; -> node 객체 생성 : 메모리할당 + 생성자 호출 
-*/
 		node *temp = new node; 
 		temp->data = n;
 		temp->next = nullptr;
@@ -291,7 +329,7 @@ node *temp = new node; -> node 객체 생성 : 메모리할당 + 생성자 호�
 		}
 		else
 		{
-			cout << "Both nodes are nullptr" <<endl;	
+			cout << "Both nodes does not have data" <<endl;	
 		}	
 	}	
 };
@@ -314,113 +352,114 @@ int main()
     return 0;
 }
 ``` 
+{: .notice}
 
-## Linked List - 데이터 사이에 데이터 추가하기 
+</p>
+</details>
+
+## 데이터삽입   
+<details><summary>Show C++ code</summary>
+<p>
+
 - 연결 재구성
-
 ```c++
-/*
-Concatenating or joining two linked lists 
-
-1. Traverse over the linked list ‘a’ until the element next to the node is not NULL.
-2. If the element next to the current element is NULL (a->next == NULL) then change the element next to it to ‘b’ (a->next = b).
-
-*** static 멤버 함수
-http://soen.kr/lecture/ccpp/cpp3/27-3-3.htm 
-
-*/
 #include <iostream>
 using namespace std;
 
 struct node
 {
-	int data;
-	node* next; 	
+    int data;
+    node* next;
 };
 
 class LinkedList
 {
 private:
-	node *head, *tail;
+	node* head;
+	node* tail;
 public:
-	LinkedList()
-	{
-		head = nullptr;
-		tail = nullptr;
-	}
-	void add_node(int n)
-	{
-//		node *temp; 
-//		note *temp = new node;
-/*
-node *temp; -> node *타입의 temp변수선언
-node *temp = new node; -> node 객체 생성 : 메모리할당 + 생성자 호출 
-*/
-		node *temp = new node; 
-		temp->data = n;
-		temp->next = nullptr;
-		
-		if(head == nullptr)
-		{
-			head = temp;
-			tail = temp;
-		}
-		else
-		{
-			tail->next = temp;
+    LinkedList()
+    {
+        head = nullptr;
+        tail = nullptr;
+    }
+    void add_node(int n)
+    {
+        node* temp = new node;
+        temp->data = n;
+        temp->next = nullptr;
+
+        if(head == nullptr)
+        {
+            head = temp;
+            tail = temp;
+        }
+        else
+        {
+            tail->next = temp;
 			tail = tail->next;
-		}		
-	}
-	
-	node *gethead()
-	{
-		return head;
-	}
-	
-	void distplay()
-	{
-		node *temp = head;
-		while(temp != nullptr)
-		{
-			cout <<temp->data <<endl;
-			temp = temp->next;
-		}
-	}
-	
-	void concatenate(node* a, node* b)
-	{
-		if( a!= nullptr && b != nullptr)
-		{
-			if(a->next == nullptr)
-			{
-				a->next = b;
+        }
+    }
+    node* gethead()
+    {
+        return head;
+    }
+    void display(node * head)
+    {
+        if(head == nullptr)
+        {
+            cout << "nullptr : No data" << endl;
+            return;
+        }
+        else
+        {
+            node* temp;
+            temp = head;
+            while(temp != nullptr)
+            {            	
+	            cout << temp->data << endl;
+	            temp = temp->next;
 			}
-			else
-			{
-				concatenate(a->next, b);
-			}
-		}
-		else
-		{
-			cout << "Both nodes are nullptr" <<endl;	
-		}	
-	}	
-	
-	void front(int n)
-	{
-		node * temp = new node;
-		temp->data = n;
-		temp->next = head;
-		head = temp;
-	}
-	
-	void after(node *a, int value)
-	{
-		node * temp = new node;
-		temp->data = value;
-		temp->next = a->next;
-		a->next = temp;
-	}
+        }        
+    }
+    void concatenate(node* a, node* b)
+    {
+        if(a!=nullptr && b!=nullptr)
+        {
+            if(a == nullptr)
+            {
+                a->next = b;
+            }
+            else
+            {
+                concatenate(a->next, b);
+            }
+        }
+        else
+        {
+            cout << "Both nodes does not have data" << endl;
+        } 
+    }
+    
+    void front(int n)
+    {
+        if(head == nullptr)
+        {
+            cout << "No data to insert in Linked list, call add_node function" <<endl;
+            return;
+        }
+        node* temp = new node;
+        temp->data = n;
+        temp->next = head;
+        head = temp; //***
+    }
+    void after(node* a, int value)
+    {
+        node*temp = new node;
+        temp->data = value;
+        temp->next = a->next;
+        a->next = temp; //***
+    }
 };
 
 int main()
@@ -428,169 +467,394 @@ int main()
     LinkedList la;
     la.add_node(10);
     la.add_node(20);
-    
-    la.front(30);
-    
-    la.distplay();
-    
-    return 0;
-}
-``` 
-
-
-## Linked List - 데이터 **삭제**하기
-```c++
-/*
-Concatenating or joining two linked lists 
-
-1. Traverse over the linked list ‘a’ until the element next to the node is not NULL.
-2. If the element next to the current element is NULL (a->next == NULL) then change the element next to it to ‘b’ (a->next = b).
-
-*** static 멤버 함수
-http://soen.kr/lecture/ccpp/cpp3/27-3-3.htm 
-
-*/
-#include <iostream>
-using namespace std;
-
-struct node
-{
-	int data;
-	node* next; 	
-};
-
-class LinkedList
-{
-private:
-	node *head, *tail;
-public:
-	LinkedList()
-	{
-		head = nullptr;
-		tail = nullptr;
-	}
-	void add_node(int n)
-	{
-//		node *temp; 
-//		note *temp = new node;
-/*
-node *temp; -> node *타입의 temp변수선언
-node *temp = new node; -> node 객체 생성 : 메모리할당 + 생성자 호출 
-*/
-		node *temp = new node; 
-		temp->data = n;
-		temp->next = nullptr;
-		
-		if(head == nullptr)
-		{
-			head = temp;
-			tail = temp;
-		}
-		else
-		{
-			tail->next = temp;
-			tail = tail->next;
-		}		
-	}
-	
-	node *gethead()
-	{
-		return head;
-	}
-	
-	void distplay()
-	{
-		node *temp = head;
-		while(temp != nullptr)
-		{
-			cout <<temp->data <<endl;
-			temp = temp->next;
-		}
-	}
-	
-	void concatenate(node* a, node* b)
-	{
-		if( a!= nullptr && b != nullptr)
-		{
-			if(a->next == nullptr)
-			{
-				a->next = b;
-			}
-			else
-			{
-				concatenate(a->next, b);
-			}
-		}
-		else
-		{
-			cout << "Both nodes are nullptr" <<endl;	
-		}	
-	}	
-	
-	void front(int n)
-	{
-		node * temp = new node;
-		temp->data = n;
-		temp->next = head;
-		head = temp;
-	}
-	
-	void after(node *a, int value)
-	{
-		node * temp = new node;
-		temp->data = value;
-		temp->next = a->next;
-		a->next = temp;
-	}
-	
-	void deleteNode(node *beforeNode)
-	{
-		node* temp;
-		temp = beforeNode->next;
-		beforeNode->next = temp->next;
-		delete temp; 
-	}
-};
-
-int main()
-{
-    LinkedList la;
-    la.add_node(10);
-    la.add_node(20);
-    
-    la.front(30);
-    
+    la.add_node(30);
     la.add_node(40);
-    la.add_node(50);
+	la.add_node(50);
+
+    la.display(la.gethead()); //10 20 30 40 50 
     
-    la.after(la.gethead()->next->next->next, 10);
-	la.deleteNode(la.gethead()->next);
-	 
-    la.distplay();
-    
+	la.front(5);
+	la.after(la.gethead()->next->next, 25);
+		
+    la.display(la.gethead()); //5 10 20 25 30 40 50 
+
     return 0;
 }
 ``` 
+{: .notice}
 
-## Linked List - 데이터 검색 (search_Node) 
+</p>
+</details>
+
+## 데이터삭제  
+<details><summary>Show C++ code</summary>
+<<p>
+
 ```c++
+#include <iostream>
+using namespace std;
 
+struct node
+{
+    int data;
+    node* next;
+};
+
+class LinkedList
+{
+private:
+	node* head;
+	node* tail;
+public:
+    LinkedList()
+    {
+        head = nullptr;
+        tail = nullptr;
+    }
+    void add_node(int n)
+    {
+        node* temp = new node;
+        temp->data = n;
+        temp->next = nullptr;
+
+        if(head == nullptr)
+        {
+            head = temp;
+            tail = temp;
+        }
+        else
+        {
+            tail->next = temp;
+			tail = tail->next;
+        }
+    }
+    node* gethead()
+    {
+        return head;
+    }
+    void display(node * head)
+    {
+        if(head == nullptr)
+        {
+            cout << "nullptr : No data" << endl;
+            return;
+        }
+        else
+        {
+            node* temp;
+            temp = head;
+            while(temp != nullptr)
+            {            	
+	            cout << temp->data << endl;
+	            temp = temp->next;
+			}
+        }        
+    }
+    void concatenate(node* a, node* b)
+    {
+        if(a!=nullptr && b!=nullptr)
+        {
+            if(a == nullptr)
+            {
+                a->next = b;
+            }
+            else
+            {
+                concatenate(a->next, b);
+            }
+        }
+        else
+        {
+            cout << "Both nodes does not have data" << endl;
+        } 
+    }
+    
+    void front(int n)
+    {
+        if(head == nullptr)
+        {
+            cout << "No data to insert in Linked list, call add_node function" <<endl;
+            return;
+        }
+        node* temp = new node;
+        temp->data = n;
+        temp->next = head;
+        head = temp;
+    }
+    void after(node* a, int value)
+    {
+        node*temp = new node;
+        temp->data = value;
+        temp->next = a->next;
+        a->next = temp;
+    }
+    void del(node* head, int value)
+    {       
+        if(!head)
+        {
+            return;
+        }
+        else
+        {
+            node** nd = &head;
+            while(*nd && (*nd)->data != value)
+                nd = &(*nd)->next;
+            if(*nd)
+            {
+                node* temp = *nd;
+                *nd = (*nd)->next;
+                delete temp;
+            }
+            else
+            {
+                cout << "No matching data in the node" <<endl;
+            }           
+        }   
+    }
+};
+
+int main()
+{
+    LinkedList la;
+    la.add_node(10);
+    la.add_node(20);
+    la.add_node(30);
+    la.add_node(40);
+	la.add_node(50);
+
+    la.display(la.gethead()); //10 20 30 40 50 
+    
+	la.front(5);
+	la.after(la.gethead()->next->next, 25);
+		
+    la.display(la.gethead()); //5 10 20 25 30 40 50 
+	
+	la.del(la.gethead(), 40);
+    la.display(la.gethead()); //5 10 20 25 30 50
+	
+    return 0;
+}
+
+``` 
+{: .notice}
+
+</p>
+</details>
+
+## 데이터검색    
+<details><summary>Show C++ code</summary>
+<p>
+
+```c++
+#include <iostream>
+using namespace std;
+
+struct node
+{
+    int data;
+    node* next;
+};
+
+class LinkedList
+{
+private:
+	node* head;
+	node* tail;
+public:
+    LinkedList()
+    {
+        head = nullptr;
+        tail = nullptr;
+    }
+    void add_node(int n)
+    {
+        node* temp = new node;
+        temp->data = n;
+        temp->next = nullptr;
+
+        if(head == nullptr)
+        {
+            head = temp;
+            tail = temp;
+        }
+        else
+        {
+            tail->next = temp;
+			tail = tail->next;
+        }
+    }
+    node* gethead()
+    {
+        return head;
+    }
+    void display(node * head)
+    {
+        if(head == nullptr)
+        {
+            cout << "nullptr : No data" << endl;
+            return;
+        }
+        else
+        {
+            node* temp;
+            temp = head;
+            while(temp != nullptr)
+            {            	
+	            cout << temp->data << endl;
+	            temp = temp->next;
+			}
+        }        
+    }
+    void concatenate(node* a, node* b)
+    {
+        if(a!=nullptr && b!=nullptr)
+        {
+            if(a == nullptr)
+            {
+                a->next = b;
+            }
+            else
+            {
+                concatenate(a->next, b);
+            }
+        }
+        else
+        {
+            cout << "Both nodes does not have data" << endl;
+        } 
+    }
+    
+    void front(int n)
+    {
+        if(head == nullptr)
+        {
+            cout << "No data to insert in Linked list, call add_node function" <<endl;
+            return;
+        }
+        node* temp = new node;
+        temp->data = n;
+        temp->next = head;
+        head = temp;
+    }
+    void after(node* a, int value)
+    {
+        node*temp = new node;
+        temp->data = value;
+        temp->next = a->next;
+        a->next = temp;
+    }
+    void del(node* head, int value)
+    {       
+        if(!head)
+        {
+            return;
+        }
+        else
+        {
+            node** nd = &head;
+            while(*nd && (*nd)->data != value)
+                nd = &(*nd)->next;
+            if(*nd)
+            {
+                node* temp = *nd;
+                *nd = (*nd)->next;
+                delete temp;
+            }
+            else
+            {
+                cout << "No matching data in the node" <<endl;
+            }
+        }
+    }
+    bool search(node* a, int n)
+    {
+        if( a == nullptr)
+        {
+            cout << "node is empty" << endl;
+            return false;
+        }
+        else
+        {
+            node* temp = a;
+            while( temp != nullptr)
+            {
+                if( temp->data == n )
+                    return true;
+                temp = temp->next;
+            }
+            return false;
+        }       
+    }
+};
+
+int main()
+{
+    LinkedList la;
+    la.add_node(10);
+    la.add_node(20);
+    la.add_node(30);
+    la.add_node(40);
+	la.add_node(50);
+
+    la.display(la.gethead()); //10 20 30 40 50 
+    
+	la.front(5);
+	la.after(la.gethead()->next->next, 25);
+		
+    la.display(la.gethead()); //5 10 20 25 30 40 50 
+	
+	la.del(la.gethead(), 40);
+    la.display(la.gethead()); //5 10 20 25 30 50
+	 
+    la.search(la.gethead(), 30) ? (cout << "YES" << endl) : (cout << "NO" <<endl) ;  //YES
+
+    return 0;
+}
 ```
+{: .notice}
+
+</p>
+</details>
 
 ##  **Singly** Linked List - C++ Container library  
 [c++ **forward_list**(*singly linked list*)](https://en.cppreference.com/w/cpp/container/forward_list).  
 
 ```c++
+#include <iostream>
+#include <forward_list>
+using namespace std;
 
+int main()
+{
+    // Create a list containing integers
+    forward_list<int> fl = { 1, 2, 3, 4 };
+ 
+    // Iterate and print values of the list
+    for (int n : fl) {
+        cout << n << '\n';  //1, 2, 3, 4
+    }
+    
+    fl.pop_front();
+    for (int n : fl) {
+        cout << n << '\n';   //2, 3, 4
+    }
+    
+    fl.push_front(5);
+    for (int n : fl) {
+        cout << n << '\n';  //5, 2, 3, 4
+    }
+}
 ```
+{: .notice}
 
 ---
 ---
 ---
 
 ##  Doubly Linked List 이중 연결 리스트 
-![Doubly Linked List 다중 연결 리스트](/images/Doubly-linked-list)
-
+|![Doubly Linked List 다중 연결 리스트](/images/Doubly-linked-list.png)|
+|:--:| 
+|*[doubly linked list](https://en.wikipedia.org/wiki/Linked_list#Doubly_linked_list)*|
 
 * 더블 링크드 리스트 (Doubly Linked list) 구조  
    * singly linked list는 데이터 탐색시 head 노드부터 tail까지 탐색을 해야함 -> 원하는 데이터가 뒤에 있다면?
@@ -638,4 +902,4 @@ int main()
     }
 }
 ```
-
+{: .notice}
