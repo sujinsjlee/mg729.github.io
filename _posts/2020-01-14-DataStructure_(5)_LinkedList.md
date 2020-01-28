@@ -8,7 +8,7 @@ categories: [Data Structure]
 ---
 
 ##  Linked List (단순연결리스트의 구조)
-|![Singly Linked List 단순 연결 리스트](/images/Singly-linked-list.png)|
+| ![Singly Linked List 단순 연결 리스트](/images/Singly-linked-list.png) |
 |:--:| 
 | *[singly linked list](https://en.wikipedia.org/wiki/Linked_list)* |
 
@@ -105,9 +105,7 @@ int main()
 * `node* head, tail;` : tail은 node*가 아니라 node타입으로 선언됨  
     * node* head, tail; //(x)
 	* node *head, *tail; //(o)
--->  
-{: .notice}
-
+-->
 </p>
 </details>
 
@@ -182,8 +180,6 @@ int main()
 <!--new node is the new 'tail'-->  
 * 새로운 노드는 새로운 tail노드    
 <!--* 이 부분을 `temp-> tail->next;` 라고 하면 안됩니다-->
-{: .notice} 
-
 </p>
 </details>
 
@@ -252,7 +248,6 @@ int main()
 `temp = head;`  
 * temp = **this**->head;  
 * 현재 객체의 head node  
-{: .notice}
 </p>
 </details>
 
@@ -352,8 +347,6 @@ int main()
     return 0;
 }
 ``` 
-{: .notice}
-
 </p>
 </details>
 
@@ -481,8 +474,6 @@ int main()
     return 0;
 }
 ``` 
-{: .notice}
-
 </p>
 </details>
 
@@ -636,8 +627,6 @@ int main()
 }
 
 ``` 
-{: .notice}
-
 </p>
 </details>
 
@@ -811,7 +800,6 @@ int main()
     return 0;
 }
 ```
-{: .notice}
 
 </p>
 </details>
@@ -852,9 +840,9 @@ int main()
 ---
 
 ##  Doubly Linked List 이중 연결 리스트 
-|![Doubly Linked List 다중 연결 리스트](/images/Doubly-linked-list.png)|
+| ![Doubly Linked List 다중 연결 리스트](/images/Doubly-linked-list.png) |
 |:--:| 
-|*[doubly linked list](https://en.wikipedia.org/wiki/Linked_list#Doubly_linked_list)*|
+| *[doubly linked list](https://en.wikipedia.org/wiki/Linked_list#Doubly_linked_list)* |
 
 * 더블 링크드 리스트 (Doubly Linked list) 구조  
    * singly linked list는 데이터 탐색시 head 노드부터 tail까지 탐색을 해야함 -> 원하는 데이터가 뒤에 있다면?
