@@ -7,10 +7,12 @@ tags: [Data Structure, Linked List]
 categories: [Data Structure]
 ---
 
-##  Linked List (단순연결리스트의 구조)
-| ![Singly Linked List 단순 연결 리스트](/images/Singly-linked-list.png) |  
-|:--:|  
-| *[singly linked list](https://en.wikipedia.org/wiki/Linked_list)* |  
+##  Linked List (단순연결리스트의 구조)  
+<table align="center"><tr><td align="center" width="9999">  
+ <img src = "/images/Singly-linked-list.png" align = "center">   
+
+ *[singly linked list](https://en.wikipedia.org/wiki/Linked_list)* 
+ </td></tr></table>
 
 > **동적으로 크기가 변할 수 있고 삭제나 삽입 시에 데이터를 이동할 필요가 없는 구조**  
 <ul>
@@ -55,7 +57,8 @@ categories: [Data Structure]
 <details><summary>Show C++ code</summary>
 <p>
 
-1. Struct를 이용하여 Node만들기    
+1. Struct를 이용하여 Node만들기  
+
 ```c++  
 #incldue <iostream>
 using namespace std;
@@ -66,10 +69,12 @@ struct node
     node *next;
 }
 ```  
+
 2. Class를 이용하여 linked_list 만들기  
 * singly linked list에서 first node는 반드시 알고 있어야합니다.      
     * first node를 통해서 전체 list에 접근하므로    
-    * first node를 **head**라고 함   
+    * first node를 **head**라고 함  
+
 ```c++  
 #include <iostream>
 using namespace std;
@@ -106,6 +111,7 @@ int main()
     * node* head, tail; //(x)
 	* node *head, *tail; //(o)
 -->
+
 </p>
 </details>
 
@@ -160,6 +166,7 @@ int main()
     return 0;
 }
 ```  
+
 `node *temp = new node;`    
 <!--* By new operator, allocate the space for the node-->    
 * 새로운 node 객체 생성  
@@ -244,10 +251,12 @@ int main()
     l.distplay();
     return 0;
 }
-``` 
+```  
+
 `temp = head;`  
 * temp = **this**->head;  
 * 현재 객체의 head node  
+
 </p>
 </details>
 
@@ -346,7 +355,8 @@ int main()
     
     return 0;
 }
-``` 
+```  
+ 
 </p>
 </details>
 
@@ -355,6 +365,7 @@ int main()
 <p>
 
 - 연결 재구성
+
 ```c++
 #include <iostream>
 using namespace std;
@@ -473,13 +484,14 @@ int main()
 
     return 0;
 }
-``` 
+```  
+
 </p>
 </details>
 
 ## 데이터삭제  
 <details><summary>Show C++ code</summary>
-<<p>
+<p>
 
 ```c++
 #include <iostream>
@@ -626,7 +638,8 @@ int main()
     return 0;
 }
 
-``` 
+```  
+
 </p>
 </details>
 
