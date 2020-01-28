@@ -50,8 +50,9 @@ categories: [Data Structure]
 > [데이터 검색하기](#데이터검색)  
 
 
-## Node&LinkedList클래스
-1. Struct를 이용하여 Node만들기  
+## Node&LinkedList클래스  
+1. Struct를 이용하여 Node만들기
+
 ```c++  
 #incldue <iostream>
 using namespace std;
@@ -62,10 +63,13 @@ struct node
     node *next;
 }
 ```  
+{: .notice} 
+
 2. Class를 이용하여 linked_list 만들기  
 * singly linked list에서 first node는 반드시 알고 있어야합니다.      
     * first node를 통해서 전체 list에 접근하므로    
-    * first node를 **head**라고 함  
+    * first node를 **head**라고 함   
+
 ```c++  
 #include <iostream>
 using namespace std;
@@ -153,6 +157,8 @@ int main()
     return 0;
 }
 ```
+{: .notice}
+
 `node *temp = new node;`  
 <!--* By new operator, allocate the space for the node-->    
 * 새로운 node 객체 생성  
@@ -169,7 +175,7 @@ int main()
 <!--new node is the new 'tail'-->  
 * 새로운 노드는 새로운 tail노드    
 <!--* 이 부분을 `temp-> tail->next;` 라고 하면 안됩니다-->
-{: .notice}
+
 
 
 ## 데이터출력  
@@ -231,10 +237,11 @@ int main()
     return 0;
 }
 ```
+{: .notice} 
 `temp = head;`  
-	* temp = **this**->head;  
-	* 현재 객체의 head node  
-{: .notice}  
+*  temp = **this**->head;  
+*  현재 객체의 head node
+ 
 
 ## Node연결  
 ```c++
