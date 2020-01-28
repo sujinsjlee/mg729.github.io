@@ -8,9 +8,9 @@ categories: [Data Structure]
 ---
 
 ##  Linked List (단순연결리스트의 구조)
-| ![Singly Linked List 단순 연결 리스트](/images/Singly-linked-list.png) |
-|:--:| 
-| *[singly linked list](https://en.wikipedia.org/wiki/Linked_list)* |
+| ![Singly Linked List 단순 연결 리스트](/images/Singly-linked-list.png) |  
+|:--:|  
+| *[singly linked list](https://en.wikipedia.org/wiki/Linked_list)* |  
 
 > **동적으로 크기가 변할 수 있고 삭제나 삽입 시에 데이터를 이동할 필요가 없는 구조**  
 <ul>
@@ -840,9 +840,9 @@ int main()
 ---
 
 ##  Doubly Linked List 이중 연결 리스트 
-| ![Doubly Linked List 다중 연결 리스트](/images/Doubly-linked-list.png) |
-|:--:| 
-| *[doubly linked list](https://en.wikipedia.org/wiki/Linked_list#Doubly_linked_list)* |
+| ![Doubly Linked List 다중 연결 리스트](/images/Doubly-linked-list.png) |  
+|:--:|   
+| *[doubly linked list](https://en.wikipedia.org/wiki/Linked_list#Doubly_linked_list)* |  
 
 * 더블 링크드 리스트 (Doubly Linked list) 구조  
    * singly linked list는 데이터 탐색시 head 노드부터 tail까지 탐색을 해야함 -> 원하는 데이터가 뒤에 있다면?
