@@ -152,23 +152,19 @@ int main()
     l.add_node(20);
     return 0;
 }
-```  
+```
 `node *temp = new node;`    
 <!--* By new operator, allocate the space for the node-->    
 * 새로운 node 객체 생성  
-
 `temp->data = n;`  
 <!--* input the value 'n' to the 'data' of 'temp'-->  
 * temp 노드의 data에 n값 입력  
-
 `temp->next = nullptr;`  
 <!--* represent that node is the last node : pointer address will be nullptr-->    
 * temp노드가 마지막 노드  
-
 `tail->next = temp;`  
 <!-- * new node(temp) will go after 'tail'  -->  
 * 새로운 temp node가 tail 노드 다음에 위치
-
 `tail = tail->next;` 
 <!--new node is the new 'tail'-->  
 * 새로운 노드는 새로운 tail노드    
@@ -233,7 +229,7 @@ int main()
     l.distplay();
     return 0;
 }
-```  
+```
 `temp = head;`  
 * temp = **this**->head;  
 * 현재 객체의 head node  
@@ -333,8 +329,9 @@ int main()
 ```  
 {: .notice}  
 
-## 데이터삽입 
-- 연결 재구성 
+## 데이터삽입  
+
+- 연결 재구성   
 ```c++
 #include <iostream>
 using namespace std;
@@ -434,7 +431,6 @@ public:
         a->next = temp; //***
     }
 };
-
 int main()
 {
     LinkedList la;
@@ -806,8 +802,6 @@ int main()
 ```
 {: .notice}
 
----
----
 ---
 
 ##  Doubly Linked List 이중 연결 리스트 
