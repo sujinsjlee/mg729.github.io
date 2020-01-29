@@ -162,13 +162,13 @@ int main()
   
 `node *temp = new node;` 새로운 node 객체 생성  
 <!--* By new operator, allocate the space for the node-->
-`temp->data = n;` temp 노드의 data에 n값 입력    
+`temp->data = n;` temp 노드의 data에 n값 입력  
 <!--* input the value 'n' to the 'data' of 'temp'-->  
-`temp->next = nullptr;` temp노드가 마지막 노드    
+`temp->next = nullptr;` temp노드가 마지막 노드  
 <!--* represent that node is the last node : pointer address will be nullptr-->    
-`tail->next = temp;` 새로운 temp node가 tail 노드 다음에 위치   
+`tail->next = temp;` 새로운 temp node가 tail 노드 다음에 위치  
 <!-- * new node(temp) will go after 'tail'  -->  
-`tail = tail->next;` 새로운 노드는 새로운 tail노드        
+`tail = tail->next;` 새로운 노드는 새로운 tail노드     
 <!--new node is the new 'tail'-->  
 <!--* 이 부분을 `temp-> tail->next;` 라고 하면 안됩니다-->
 
@@ -234,9 +234,7 @@ int main()
 ```
 {: .notice}  
 
- `temp = head;`  
-*  temp = **this**->head;  
-*  현재 객체의 head node
+ `temp = head;` temp = **this**->head;  *(현재 객체의 head node)*
  
 
 ## Node연결  
@@ -441,12 +439,12 @@ int main()
     la.add_node(20);
     la.add_node(30);
     la.add_node(40);
-	la.add_node(50);
+    la.add_node(50);
 
     la.display(la.gethead()); //10 20 30 40 50 
-    
-	la.front(5);
-	la.after(la.gethead()->next->next, 25);
+
+    la.front(5);
+    la.after(la.gethead()->next->next, 25);
 		
     la.display(la.gethead()); //5 10 20 25 30 40 50 
 
@@ -586,16 +584,16 @@ int main()
     la.add_node(20);
     la.add_node(30);
     la.add_node(40);
-	la.add_node(50);
+    la.add_node(50);
 
     la.display(la.gethead()); //10 20 30 40 50 
     
-	la.front(5);
-	la.after(la.gethead()->next->next, 25);
+    la.front(5);
+    la.after(la.gethead()->next->next, 25);
 		
     la.display(la.gethead()); //5 10 20 25 30 40 50 
 	
-	la.del(la.gethead(), 40);
+    la.del(la.gethead(), 40);
     la.display(la.gethead()); //5 10 20 25 30 50
 	
     return 0;
@@ -754,16 +752,16 @@ int main()
     la.add_node(20);
     la.add_node(30);
     la.add_node(40);
-	la.add_node(50);
+    la.add_node(50);
 
     la.display(la.gethead()); //10 20 30 40 50 
     
-	la.front(5);
-	la.after(la.gethead()->next->next, 25);
+    la.front(5);
+    la.after(la.gethead()->next->next, 25);
 		
     la.display(la.gethead()); //5 10 20 25 30 40 50 
 	
-	la.del(la.gethead(), 40);
+    la.del(la.gethead(), 40);
     la.display(la.gethead()); //5 10 20 25 30 50
 	 
     la.search(la.gethead(), 30) ? (cout << "YES" << endl) : (cout << "NO" <<endl) ;  //YES
