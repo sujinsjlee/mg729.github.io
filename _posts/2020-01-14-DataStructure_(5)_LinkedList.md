@@ -10,6 +10,7 @@ categories: [Data Structure]
 ##  Linked List (단순연결리스트의 구조)  
  ![sindly_linked_list](/images/Singly-linked-list.png)  
  *[singly linked list](https://en.wikipedia.org/wiki/Linked_list)* 
+{: .text-center }
 
 > **동적으로 크기가 변할 수 있고 삭제나 삽입 시에 데이터를 이동할 필요가 없는 구조**  
 <ul>
@@ -51,7 +52,7 @@ categories: [Data Structure]
 
 
 ## Node&LinkedList클래스  
-1. Struct를 이용하여 Node만들기
+* Struct를 이용하여 Node만들기
 
 ```c++  
 #incldue <iostream>
@@ -65,10 +66,10 @@ struct node
 ```  
 {: .notice} 
 
-2. Class를 이용하여 linked_list 만들기  
-* singly linked list에서 first node는 반드시 알고 있어야합니다.      
-    * first node를 통해서 전체 list에 접근하므로    
-    * first node를 **head**라고 함   
+* Class를 이용하여 linked_list 만들기  
+    * singly linked list에서 first node는 반드시 알고 있어야합니다.      
+        * first node를 통해서 전체 list에 접근하므로    
+        * first node를 **head**라고 함   
 
 ```c++  
 #include <iostream>
@@ -158,24 +159,18 @@ int main()
 }
 ```
 {: .notice}
-
-`node *temp = new node;`  
-<!--* By new operator, allocate the space for the node-->    
-* 새로운 node 객체 생성  
-`temp->data = n;`  
+  
+`node *temp = new node;` 새로운 node 객체 생성  
+<!--* By new operator, allocate the space for the node-->
+`temp->data = n;` temp 노드의 data에 n값 입력    
 <!--* input the value 'n' to the 'data' of 'temp'-->  
-* temp 노드의 data에 n값 입력  
-`temp->next = nullptr;`  
+`temp->next = nullptr;` temp노드가 마지막 노드    
 <!--* represent that node is the last node : pointer address will be nullptr-->    
-* temp노드가 마지막 노드  
-`tail->next = temp;`  
+`tail->next = temp;` 새로운 temp node가 tail 노드 다음에 위치   
 <!-- * new node(temp) will go after 'tail'  -->  
-* 새로운 temp node가 tail 노드 다음에 위치
-`tail = tail->next;` 
+`tail = tail->next;` 새로운 노드는 새로운 tail노드        
 <!--new node is the new 'tail'-->  
-* 새로운 노드는 새로운 tail노드    
 <!--* 이 부분을 `temp-> tail->next;` 라고 하면 안됩니다-->
-
 
 
 ## 데이터출력  
@@ -237,8 +232,9 @@ int main()
     return 0;
 }
 ```
-{: .notice} 
-`temp = head;`  
+{: .notice}  
+
+ `temp = head;`  
 *  temp = **this**->head;  
 *  현재 객체의 head node
  
@@ -814,6 +810,7 @@ int main()
 ##  Doubly Linked List 이중 연결 리스트 
 ![Doubly Linked List 다중 연결 리스트](/images/Doubly-linked-list.png)  
 *[doubly linked list](https://en.wikipedia.org/wiki/Linked_list#Doubly_linked_list)*
+{: .text-center }  
 
 * 더블 링크드 리스트 (Doubly Linked list) 구조  
    * singly linked list는 데이터 탐색시 head 노드부터 tail까지 탐색을 해야함 -> 원하는 데이터가 뒤에 있다면?
