@@ -161,16 +161,10 @@ int main()
 {: .notice}
   
 `node *temp = new node;` 새로운 node 객체 생성  
-<!--* By new operator, allocate the space for the node-->
 `temp->data = n;` temp 노드의 data에 n값 입력  
-<!--* input the value 'n' to the 'data' of 'temp'-->  
 `temp->next = nullptr;` temp노드가 마지막 노드  
-<!--* represent that node is the last node : pointer address will be nullptr-->    
 `tail->next = temp;` 새로운 temp node가 tail 노드 다음에 위치  
-<!-- * new node(temp) will go after 'tail'  -->  
-`tail = tail->next;` 새로운 노드는 새로운 tail노드     
-<!--new node is the new 'tail'-->  
-<!--* 이 부분을 `temp-> tail->next;` 라고 하면 안됩니다-->
+`tail = tail->next;` 새로운 노드는 새로운 tail노드  
 
 
 ## 데이터출력  
@@ -234,7 +228,9 @@ int main()
 ```
 {: .notice}  
 
- `temp = head;` temp = **this**->head;  *(현재 객체의 head node)*
+ `temp = head;` 
+ * temp = **this**->head;  
+ * 현재 객체의 head node
  
 
 ## Node연결  
@@ -638,7 +634,7 @@ public:
         else
         {
             tail->next = temp;
-			tail = tail->next;
+		    tail = tail->next;
         }
     }
     node* gethead()
@@ -660,7 +656,7 @@ public:
             {            	
 	            cout << temp->data << endl;
 	            temp = temp->next;
-			}
+		    }
         }        
     }
     void concatenate(node* a, node* b)
