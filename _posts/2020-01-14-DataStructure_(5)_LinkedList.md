@@ -37,7 +37,7 @@ categories: [Data Structure]
 2. 단점  
    * 저장 효율이 높지 않음 (데이터 뿐만아니라 연결을 위한 포인터 주소공간도 필요하므로)  
    * 연결정보를 찾는 시간이 필요하므로 접근 속도가 느림  
-   * 중단 데이터 삭제시, 앞뒤 데이터의 연결을 재구성해야함  
+   * 중간 데이터 삭제시, 앞뒤 데이터의 연결을 재구성해야함  
 
 # C++ Code
 * [Linked List C++ code](https://www.codesdope.com/blog/article/c-linked-lists-in-c-singly-linked-list/)  
