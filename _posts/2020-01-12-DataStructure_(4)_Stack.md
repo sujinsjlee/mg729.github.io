@@ -4,7 +4,7 @@ title: Data Structure - (4) 스택
 description: (4) Understanding of Stack
 modified: 2020-01-13
 tags: [Data Structure, Stack]
-categories: [Data Structure]
+categories: [DataStructure]
 ---
 
 ##  Stack (스택의 구조)

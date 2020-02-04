@@ -4,7 +4,7 @@ title: Data Structure - (6) 해쉬 테이블
 description: (6) Understanding of Hash Table
 modified: 2020-01-30
 tags: [Data Structure, HashTable]
-categories: [Data Structure]
+categories: [DataStructure]
 published: false
 ---
 

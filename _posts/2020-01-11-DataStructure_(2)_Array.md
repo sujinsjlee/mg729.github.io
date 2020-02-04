@@ -4,7 +4,7 @@ title: Data Structure - (2) 배열
 description: (2) Understanding of Array
 modified: 2020-01-11
 tags: [Data Structure, Array]
-categories: [Data Structure]
+categories: [DataStructure]
 ---
 
 ##  Array  

@@ -4,7 +4,7 @@ title: Data Structure - Recursion(재귀, 순환)에 대한 이해
 description: Understanding of Recursive Function
 modified: 2019-09-15
 tags: [Data Structure]
-categories: [Data Structure]
+categories: [DataStructure]
 ---
 
 ## 1. 재귀( 순환 )

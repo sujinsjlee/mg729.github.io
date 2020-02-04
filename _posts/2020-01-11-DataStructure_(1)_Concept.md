@@ -4,7 +4,7 @@ title: Data Structure - (1) 자료구조, 알고리즘이란 무엇인가
 description: (1) Understanding of Data Structure and Algorithm
 modified: 2020-01-11
 tags: [Data Structure]
-categories: [Data Structure]
+categories: [DataStructure]
 ---
 
 ## 1. Data Structure - 자료구조  

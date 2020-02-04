@@ -4,7 +4,7 @@ title: Data Structure - (5) 연결 리스트
 description: (5) Understanding of Linked List
 modified: 2020-01-14
 tags: [Data Structure, Linked List]
-categories: [Data Structure]
+categories: [DataStructure]
 ---
 
 ##  Linked List (단순연결리스트의 구조)  
