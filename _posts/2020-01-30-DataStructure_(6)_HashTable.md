@@ -96,10 +96,8 @@ int main()
 		* 가장 많이 사용되는 해시 함수  
 		* 해쉬의 결과 : **128 bit**  
 		* 비트코인, 블록체인 시스템에서 활용  
-		
-```c++
-
-```
+*한국인터넷진흥원(KISA)에서는 256비트 해시함수 SHA-256을 쉽게 활용할 수 있도록, 소스코드를 배포하고 있습니다.  		
+[KISA](https://seed.kisa.or.kr/kisa/Board/21/detailView.do)
 
 ## 시간복잡도  
 > 저장 및 데이터 읽는 데 걸리는 시간 복잡도  
@@ -110,43 +108,49 @@ int main()
  
 ## C++ Code  
 > [Simple Hash Table](#해쉬테이블)  
-> [Hash Table-list](#해쉬테이블-리스트)     
+> [Hash Table-list](#해쉬테이블-리스트)  
 > [Chaining 기법](#체이닝)  
-> [sha256 해쉬 함수를 활용한 Chaining 기법](#체이닝_sha256)  
 > [Linear Probing기법](#선형조사법)  
+> [C++ Hash Table Implementaion](https://www.youtube.com/watch?v=2_3fR-k-LzI)  
 
-## 해쉬테이블
-* 해쉬 테이블을 리스트로 만들기  
+## 해쉬테이블  
+* 해쉬 테이블을 리스트로 만들기   
 * 해쉬 함수 만들기  
 	* 나머지 연산자로 해쉬함수 만들기
 * 해쉬 테이블에 key 저장  
 * 해쉬 테이블에 값 저장  
-	* data를 가지고 key값을 만들고 
 	* key값을 가지고 hash func을 통해서 hash address을 만들고 
 	* hash address 를 통해서 slot에 hash value를 저장  
 * 해쉬 함수에 key값을 활용하여 해쉬 값을 읽어오기  
 
 ```c++
+
 ``` 
+{: .notice} 
 
 ## 해쉬테이블-리스트
 * 해쉬 함수 : key %8  
 * 해쉬 키 생성 : std::hash  
+  
+  
 ```c++
+
 ```
+{: .notice} 
 
 ## 체이닝
+
+
+  
 ```c++
 ```
-
-## 체이닝_sha256
+{: .notice} 
+## 선형조사법  
+ 
+  
 ```c++
 ```
-
-## 선형조사법
-```c++
-```
-
+{: .notice} 
 
 
 
