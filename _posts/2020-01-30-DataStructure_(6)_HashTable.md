@@ -50,17 +50,19 @@ published: false
 
 1. 체이닝
 ![Chaining](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Hash_table_5_0_1_1_1_1_0_LL.svg/1920px-Hash_table_5_0_1_1_1_1_0_LL.svg.png)  
-* Open Hashing 기법 (개방해슁) : 해쉬 테이블 저장 공간 외의 공간을 활용  
-	* 충돌이 일어나면 **연결리스트** 자료구조를 활용  
-	* 링크드 리스트로 데이터를 추가로 뒤에 연결시켜서 저장하는 방법  	
+	* Open Hashing 기법 (개방해슁) : 해쉬 테이블 저장 공간 외의 공간을 활용  
+		* 충돌이 일어나면 **연결리스트** 자료구조를 활용  
+		* 링크드 리스트로 데이터를 추가로 뒤에 연결시켜서 저장하는 방법  	
+		* 메모리 추가 문제
 2. 선형 조사법
 ![LinearProbing](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Hash_table_5_0_1_1_1_1_0_SP.svg/1024px-Hash_table_5_0_1_1_1_1_0_SP.svg.png)  
-* Close Hashing 기법 (폐쇄 해슁) : 해쉬테이블 저장공간 안에서 충돌문제를 해결  
-	* 충돌이 일어나면 hash address 의 다음 address 부터 맨 처음나오는 빈공간에 저장  
-	* 저장공간 활용도를 높이기 위한 방법  
+	* Closed Hashing 기법 (폐쇄 해슁) : 해쉬테이블 저장공간 안에서 충돌문제를 해결  
+		* 충돌이 일어나면 hash address 의 다음 address 부터 맨 처음나오는 빈공간에 저장  
+		* 저장공간 활용도를 높이기 위한 방법  
+		* open addressing method
 3. 빈번한 충돌을 개선하는 방법  
-* 해쉬 함수의 재정의 및 해쉬 테이블 저장공간 확대  
-	* 저장 공간을 두배로 증가시키는 것이 일반적 해결 방법  
+	* 해쉬 함수의 재정의 및 해쉬 테이블 저장공간 확대  
+		* 저장 공간을 두배로 증가시키는 것이 일반적 해결 방법  
 
 ## 해쉬 함수
 * **std::hash**  
@@ -96,8 +98,8 @@ int main()
 		* 가장 많이 사용되는 해시 함수  
 		* 해쉬의 결과 : **128 bit**  
 		* 비트코인, 블록체인 시스템에서 활용  
-*한국인터넷진흥원(KISA)에서는 256비트 해시함수 SHA-256을 쉽게 활용할 수 있도록, 소스코드를 배포하고 있습니다.  		
-[KISA](https://seed.kisa.or.kr/kisa/Board/21/detailView.do)
+* 한국인터넷진흥원 [KISA](https://seed.kisa.or.kr/kisa/Board/21/detailView.do)에서는 256비트 해시함수 SHA-256을 쉽게 활용할 수 있도록, 소스코드를 배포하고 있습니다.
+
 
 ## 시간복잡도  
 > 저장 및 데이터 읽는 데 걸리는 시간 복잡도  
@@ -108,49 +110,48 @@ int main()
  
 ## C++ Code  
 > [Simple Hash Table](#해쉬테이블)  
-> [Hash Table-list](#해쉬테이블-리스트)  
 > [Chaining 기법](#체이닝)  
 > [Linear Probing기법](#선형조사법)  
-> [C++ Hash Table Implementaion](https://www.youtube.com/watch?v=2_3fR-k-LzI)  
 
+*  [C++ Hash Table Implementaion](http://www.algolist.net/Data_structures/Hash_table)  
+
+<!--http://www.algolist.net/Data_structures/Hash_table/Simple_example-->
 ## 해쉬테이블  
-* 해쉬 테이블을 리스트로 만들기   
-* 해쉬 함수 만들기  
-	* 나머지 연산자로 해쉬함수 만들기
-* 해쉬 테이블에 key 저장  
-* 해쉬 테이블에 값 저장  
-	* key값을 가지고 hash func을 통해서 hash address을 만들고 
-	* hash address 를 통해서 slot에 hash value를 저장  
-* 해쉬 함수에 key값을 활용하여 해쉬 값을 읽어오기  
+
+<details><summary>Hash Table</summary>
+<p>
 
 ```c++
-
 ``` 
-{: .notice} 
 
-## 해쉬테이블-리스트
-* 해쉬 함수 : key %8  
-* 해쉬 키 생성 : std::hash  
-  
-  
-```c++
+</p>
+</details> 
+ 
 
-```
-{: .notice} 
-
+<!--http://www.algolist.net/Data_structures/Hash_table/Chaining-->
 ## 체이닝
 
+<details><summary>Chaining</summary>
+<p>
 
-  
 ```c++
-```
-{: .notice} 
+``` 
+
+</p>
+</details> 
+
+<!--http://www.algolist.net/Data_structures/Hash_table/Open_addressing-->
 ## 선형조사법  
  
-  
+<details><summary>Linear Probing</summary>
+<p>
+
 ```c++
-```
-{: .notice} 
+``` 
+
+</p>
+</details>  
+
 
 
 
