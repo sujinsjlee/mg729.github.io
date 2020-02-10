@@ -819,7 +819,7 @@ int main()
 [c++ **list** (*doubly linked list*)](https://en.cppreference.com/w/cpp/container/list).  
 
 * <b> list<int> lt(10)  
-    * lt 연결리스트에 10개의 요소를 default 값으로 생성 및 초기화  
+    * lt 연결리스트에 10개의 요소를 default 0 값으로 생성 및 초기화  
 * <b>list<int> lt{10}  
     * lt 연결리스트에 10이라는 데이터를 하나 생성  
 * <b>list<string> words1 {"I", "love", "Sunny", "weather"};  
