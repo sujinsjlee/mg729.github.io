@@ -119,9 +119,6 @@ int main()
 <!--http://www.algolist.net/Data_structures/Hash_table/Simple_example-->
 ## 해쉬테이블  
 
-<details><summary>Hash Table</summary>
-<p>
-
 ```cpp
 constexpr int TABLE_SIZE = 128; 
 
@@ -197,15 +194,9 @@ public:
 };
 ``` 
 
-</p>
-</details> 
- 
 
 <!--http://www.algolist.net/Data_structures/Hash_table/Chaining-->
-## 체이닝
-
-<details><summary>Chaining</summary>
-<p>
+## 체이닝  
 
 ```cpp
 constexpr int TABLE_SIZE = 128; 
@@ -344,14 +335,8 @@ public:
 };
 ``` 
 
-</p>
-</details> 
-
 <!--http://www.algolist.net/Data_structures/Hash_table/Open_addressing-->
 ## 선형조사법  
- 
-<details><summary>Linear Probing</summary>
-<p>
 
 ```cpp
 constexpr int TABLE_SIZE = 128; 
@@ -481,15 +466,9 @@ public:
 };
 ``` 
 
-</p>
-</details>  
-
-
 ## HashTable List
 [Hash Table implementataion by list - Youtube tutorial](https://www.youtube.com/watch?v=2_3fR-k-LzI&t=35s)  
 
-<details><summary>Hash Table By List </summary>
-<p>
 
 ```cpp
 #include<iostream>
@@ -625,15 +604,3 @@ int main()
 	return 0;
 }
 ``` 
-
-</p>
-</details>  
-
-
-
-
-
-
-
-
-
