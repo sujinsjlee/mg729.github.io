@@ -12,7 +12,7 @@ categories: [DataStructure]
 > 키만 알면 데이터가 어디에 저장되어있는지 알 수 있는 데이터 구조  
 
 ![HashTable](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/1280px-Hash_table_3_1_1_0_1_0_0_SP.svg.png)  
-[Hash Table Wiki](https://en.wikipedia.org/wiki/Hash_table) {: .text-center }    
+[Hash Table Wiki](https://en.wikipedia.org/wiki/Hash_table)      
 
 * **Key** 를 통해 바로 데이터를 받아올 수 있으므로 속도가 빠름 
 
@@ -122,7 +122,7 @@ int main()
 <details><summary>Hash Table</summary>
 <p>
 
-```c++
+```cpp
 constexpr int TABLE_SIZE = 128; 
 
 class HashBucket
@@ -207,9 +207,7 @@ public:
 <details><summary>Chaining</summary>
 <p>
 
-```c++
-#include<iostream>
-
+```cpp
 constexpr int TABLE_SIZE = 128; 
 
 class LinkedHashBucket
@@ -355,7 +353,7 @@ public:
 <details><summary>Linear Probing</summary>
 <p>
 
-```c++
+```cpp
 constexpr int TABLE_SIZE = 128; 
 
 class HashBucket
@@ -486,13 +484,14 @@ public:
 </p>
 </details>  
 
+
 ## HashTable List
 [Hash Table implementataion by list - Youtube tutorial](https://www.youtube.com/watch?v=2_3fR-k-LzI&t=35s)  
 
 <details><summary>Hash Table By List </summary>
 <p>
 
-```c++
+```cpp
 #include<iostream>
 #include<list> //해쉬 테이블 구현을 위해 linked list활용
 #include<cstring> // string c++ header
