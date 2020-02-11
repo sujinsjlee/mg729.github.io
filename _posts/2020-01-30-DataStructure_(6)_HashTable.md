@@ -5,7 +5,6 @@ description: (6) Understanding of Hash Table
 modified: 2020-01-30
 tags: [Data Structure, HashTable]
 categories: [DataStructure]
-published: false
 ---
 
 ## Hash Table 구조  
@@ -124,8 +123,6 @@ int main()
 <p>
 
 ```c++
-#include<iostream>
-
 constexpr int TABLE_SIZE = 128; 
 
 class HashBucket
@@ -280,15 +277,73 @@ public:
 				return bucket->getHashValue();
 		}
 	}
+	void put (int key, int value)
+	{
+		int hash = (key % TABLE_SIZE);
+		if(table[hash] == nullptr)
+			table[hash] = new LinkedHashBucket(key, value);
+		else
+		{
+			LinkedHashBucket * bucket = table[hash];
+			while(bucket -> getNext() != nullptr)
+				bucket = bucket->getNext();
+			if(bucket->getKey() == key)
+				bucket->setHashValue(value);
+ 			else
+ 				bucket->setNext(new LinkedHashBucket(key, value));
+		}
+	}
+	void remove(int key)
+	{
+		int hash = key%TABLE_SIZE;
+		if(table[hash] != nullptr)
+		{
+			LinkedHashBucket *prevBucket = nullptr;
+			LinkedHashBucket *bucket = table[hash];
+			
+			while(bucket->getNext() != nullptr && bucket->getKey() != key)
+			{
+				prevBucket = bucket;
+				bucket = bucket->getNext();
+			}
+			if(bucket->getKey() == key)
+			{
+				if(prevBucket == nullptr)
+				{
+					LinkedHashBucket * nextBucket = bucket->getNext();
+					delete bucket;
+					table[hash] = nextBucket;
+				}
+				else
+				{
+					LinkedHashBucket * nextBucket = bucket->getNext();
+					delete bucket;
+					prevBucket->setNext(nextBucket);
+				}
+			}
+		}
+	}
 	
+	~HashTable()
+	{
+		for(int i = 0; i < TABLE_SIZE; ++i)
+		{
+			if(table[i] != nullptr)
+			{
+				LinkedHashBucket * prevBucket = nullptr;
+				LinkedHashBucket * bucket = table[i];
+				while(bucket != nullptr)
+				{
+					prevBucket = bucket;
+					bucket = bucket->getNext();
+					delete prevBucket;
+				}
+			}
+			delete[] table;
+		}
+	}
 
 };
-
-int main()
-{
-	return 0;
-}
-
 ``` 
 
 </p>
@@ -301,6 +356,131 @@ int main()
 <p>
 
 ```c++
+constexpr int TABLE_SIZE = 128; 
+
+class HashBucket
+{
+private:
+	int key;
+	int hashValue;
+public:
+	HashBucket(int key, int hashValue)
+	{
+		this->key = key;
+		this->hashValue = hashValue;
+	}
+	int getKey()
+	{
+		return key;
+	}
+	int getHashValue()
+	{
+		return hashValue;
+	}
+	void setHashValue(int value)
+	{
+		this->hashValue = value;
+	}
+};
+
+class DeletedBucket : public HashBucket
+{
+private:
+	static DeletedBucket *bucket;
+	DeletedBucket() : HashBucket(-1,-1)
+	{
+	}
+public:
+	static DeletedBucket * getUniqueDeletedBucket()
+	{
+		if(bucket == nullptr)
+			bucket = new DeletedBucket();
+		return bucket;
+	}
+};
+
+DeletedBucket * DeletedBucket::bucket = nullptr;
+
+class HashTable
+{
+private:
+	HashBucket **table;
+public:
+	HashTable()
+	{
+		table = new HashBucket*[TABLE_SIZE];
+		for(int i = 0; i < TABLE_SIZE ; ++i)
+		{
+			table[i] = nullptr;
+		}
+	}
+	int get(int key)
+	{
+		int hash = (key% TABLE_SIZE);
+		int initialHash = -1;
+		while(hash != initialHash && table[hash] == DeletedBucket::getUniqueDeletedBucket() ||
+			table[hash] != nullptr && table[hash]->getKey() != key)
+		{
+			if(initialHash == -1)
+				initialHash = hash;
+			hash = (hash+1) % TABLE_SIZE;
+		}
+		if(table[hash] == nullptr || hash == initialHash)
+			return -1;
+		else
+			return table[hash]->getHashValue();
+	}
+	void put(int key, int value)
+	{
+		int hash = (key% TABLE_SIZE);
+		int initialHash = -1;
+		int indexOfDeletedBucket = -1;
+		while(hash != initialHash && table[hash] == DeletedBucket::getUniqueDeletedBucket() ||
+			table[hash] != nullptr && table[hash]->getKey() != key)
+		{
+			if(initialHash == -1)
+				initialHash = hash;
+			if(table[hash] == DeletedBucket::getUniqueDeletedBucket())
+				indexOfDeletedBucket = hash;
+			hash = (hash+1) % TABLE_SIZE;
+		}
+		if(table[hash] == nullptr || hash == initialHash && indexOfDeletedBucket != -1)
+			table[indexOfDeletedBucket] = new HashBucket(key, value);
+		else if(initialHash != hash)
+			if(table[hash] != DeletedBucket::getUniqueDeletedBucket() &&
+				table[hash] != nullptr && table[hash]->getKey() == key)
+					table[hash]->setHashValue(value);
+			else
+			 		table[hash] = new HashBucket(key, value);
+	}
+	void remove(int key)
+	{
+		int hash = key% TABLE_SIZE;
+		int initialHash = -1;
+		while(hash != initialHash && table[hash] == DeletedBucket::getUniqueDeletedBucket() ||
+			table[hash] != nullptr && table[hash]->getKey() != key)
+		{
+			if(initialHash == -1)
+				initialHash = hash;
+			hash = (hash+1) % TABLE_SIZE;
+		}
+		if(hash!= initialHash && table[hash] != nullptr)
+		{
+			delete table[hash];
+			table[hash] = DeletedBucket::getUniqueDeletedBucket();
+		}
+		
+	}
+	~HashTable()
+	{
+		for (int i = 0; i < TABLE_SIZE ; ++i)
+		{
+			if(table[i] != nullptr && table[i] != DeletedBucket::getUniqueDeletedBucket())
+				delete table[i];
+		}
+		delete[] table;
+	}
+};
 ``` 
 
 </p>

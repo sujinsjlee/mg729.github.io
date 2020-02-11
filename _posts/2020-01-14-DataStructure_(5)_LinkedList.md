@@ -44,16 +44,16 @@ categories: [DataStructure]
 # C++ Code
 * [Linked List C++ code](https://www.codesdope.com/blog/article/c-linked-lists-in-c-singly-linked-list/)  
 * *Below C++ code is for __Singly Linked List__*
-> [Node 구현 & Linked List class 구현](#Node&LinkedList클래스)   
+> [Node 구현 & Linked List class 구현](#node-linkedlist-클래스)   
 > [Linked List 에 데이터 추가하기](#데이터추가)  
 > [Linked List 데이터 출력하기](#데이터출력)  
-> [Node 와 Node를 연결하기](#Node연결)  
+> [Node 와 Node를 연결하기](#node연결)  
 > [Linked List 데이터 사이에 데이터 추가하기](#데이터삽입)  
 > [데이터 삭제하기](#데이터삭제)  
 > [데이터 검색하기](#데이터검색)  
 
 
-## Node&LinkedList클래스  
+## node linkedlist 클래스  
 * Struct를 이용하여 Node만들기
 
 ```c++  
@@ -235,7 +235,7 @@ int main()
  * 현재 객체의 head node
  
 
-## Node연결  
+## node연결  
 ```c++
 #include <iostream>
 using namespace std;
