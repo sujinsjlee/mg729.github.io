@@ -107,17 +107,20 @@ int main()
 
 해쉬 테이블의 경우, 일반적인 경우를 기대하고 만들기 때문에, 시간복잡도는 O(1)이라고 할 수 있음  
 
+### 참고 개념  
+* **Open Addressing**
+	* Open addressing strategy requires, that **hash function has additional properties.** In addition to performing uniform distribution, it should also **avoid clustering of hash values**, which are consequent in probe's order. 
+
 <!--!!!-->
 ## C++ Code  
-> [Simple Hash Table](#해쉬테이블)  
-> [Chaining 기법](#체이닝)  
-> [Linear Probing기법](#선형조사법)  
-> [Hash Table 구현 by list](#HashTable-List)  
+> [해쉬 테이블 - by Linear Probing기법](#hash_table_with_linear_probing)  
+> [해쉬테이블 - by Chaining 기법](#hash_table_with_chaining))  
+> [Hash Table 구현 by list](#hash_table_by_list)  
 
 *  [C++ Hash Table Implementaion](http://www.algolist.net/Data_structures/Hash_table)  
 
 <!--http://www.algolist.net/Data_structures/Hash_table/Simple_example-->
-## 해쉬테이블  
+## hash_table_with_linear_probing  
 
 ```cpp
 constexpr int TABLE_SIZE = 128; 
@@ -196,7 +199,7 @@ public:
 
 
 <!--http://www.algolist.net/Data_structures/Hash_table/Chaining-->
-## 체이닝  
+## hash_table_with_chaining  
 
 ```cpp
 constexpr int TABLE_SIZE = 128; 
@@ -335,138 +338,8 @@ public:
 };
 ``` 
 
-<!--http://www.algolist.net/Data_structures/Hash_table/Open_addressing-->
-## 선형조사법  
 
-```cpp
-constexpr int TABLE_SIZE = 128; 
-
-class HashBucket
-{
-private:
-	int key;
-	int hashValue;
-public:
-	HashBucket(int key, int hashValue)
-	{
-		this->key = key;
-		this->hashValue = hashValue;
-	}
-	int getKey()
-	{
-		return key;
-	}
-	int getHashValue()
-	{
-		return hashValue;
-	}
-	void setHashValue(int value)
-	{
-		this->hashValue = value;
-	}
-};
-
-class DeletedBucket : public HashBucket
-{
-private:
-	static DeletedBucket *bucket;
-	DeletedBucket() : HashBucket(-1,-1)
-	{
-	}
-public:
-	static DeletedBucket * getUniqueDeletedBucket()
-	{
-		if(bucket == nullptr)
-			bucket = new DeletedBucket();
-		return bucket;
-	}
-};
-
-DeletedBucket * DeletedBucket::bucket = nullptr;
-
-class HashTable
-{
-private:
-	HashBucket **table;
-public:
-	HashTable()
-	{
-		table = new HashBucket*[TABLE_SIZE];
-		for(int i = 0; i < TABLE_SIZE ; ++i)
-		{
-			table[i] = nullptr;
-		}
-	}
-	int get(int key)
-	{
-		int hash = (key% TABLE_SIZE);
-		int initialHash = -1;
-		while(hash != initialHash && table[hash] == DeletedBucket::getUniqueDeletedBucket() ||
-			table[hash] != nullptr && table[hash]->getKey() != key)
-		{
-			if(initialHash == -1)
-				initialHash = hash;
-			hash = (hash+1) % TABLE_SIZE;
-		}
-		if(table[hash] == nullptr || hash == initialHash)
-			return -1;
-		else
-			return table[hash]->getHashValue();
-	}
-	void put(int key, int value)
-	{
-		int hash = (key% TABLE_SIZE);
-		int initialHash = -1;
-		int indexOfDeletedBucket = -1;
-		while(hash != initialHash && table[hash] == DeletedBucket::getUniqueDeletedBucket() ||
-			table[hash] != nullptr && table[hash]->getKey() != key)
-		{
-			if(initialHash == -1)
-				initialHash = hash;
-			if(table[hash] == DeletedBucket::getUniqueDeletedBucket())
-				indexOfDeletedBucket = hash;
-			hash = (hash+1) % TABLE_SIZE;
-		}
-		if(table[hash] == nullptr || hash == initialHash && indexOfDeletedBucket != -1)
-			table[indexOfDeletedBucket] = new HashBucket(key, value);
-		else if(initialHash != hash)
-			if(table[hash] != DeletedBucket::getUniqueDeletedBucket() &&
-				table[hash] != nullptr && table[hash]->getKey() == key)
-					table[hash]->setHashValue(value);
-			else
-			 		table[hash] = new HashBucket(key, value);
-	}
-	void remove(int key)
-	{
-		int hash = key% TABLE_SIZE;
-		int initialHash = -1;
-		while(hash != initialHash && table[hash] == DeletedBucket::getUniqueDeletedBucket() ||
-			table[hash] != nullptr && table[hash]->getKey() != key)
-		{
-			if(initialHash == -1)
-				initialHash = hash;
-			hash = (hash+1) % TABLE_SIZE;
-		}
-		if(hash!= initialHash && table[hash] != nullptr)
-		{
-			delete table[hash];
-			table[hash] = DeletedBucket::getUniqueDeletedBucket();
-		}
-		
-	}
-	~HashTable()
-	{
-		for (int i = 0; i < TABLE_SIZE ; ++i)
-		{
-			if(table[i] != nullptr && table[i] != DeletedBucket::getUniqueDeletedBucket())
-				delete table[i];
-		}
-		delete[] table;
-	}
-};
-``` 
-
-## HashTable List
+## hash_table_by_list
 [Hash Table implementataion by list - Youtube tutorial](https://www.youtube.com/watch?v=2_3fR-k-LzI&t=35s)  
 
 
