@@ -12,3 +12,9 @@ published: false
 
 ## 트리 Tree 
 
+## 용어
+
+## 이진트리와 이진 탐색트리
+
+## C++ code
+
