@@ -5,7 +5,7 @@ description: (7) Understanding of Tree
 modified: 2020-02-11
 tags: [Data Structure, Tree]
 categories: [DataStructure]
-published:false
+published: false
 ---
 
 <!--트리는 면접에서 가장 자주 물어보는 자료구조-->
