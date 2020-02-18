@@ -6,6 +6,7 @@ modified: 2020-01-14
 tags: [Data Structure, Linked List]
 categories: [DataStructure]
 ---
+<!--Update 2020.FEB 18 : Useful linkes : https://www.softwaretestinghelp.com/doubly-linked-list/ -->
 
 > [C++ list STL 바로가기](#stl)  
 

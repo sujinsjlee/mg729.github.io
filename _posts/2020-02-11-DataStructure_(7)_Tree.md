@@ -74,32 +74,142 @@ published: false
 > [이진 탐색 트리 - Insert Data](#insert_data_in_tree)  
 > [이진 탐색 트리 - Search](#search_tree)  
 > [이진 탐색 트리 - Delete](#delete_data_in_tree)  
+> [tree 참고 c++ code](https://www.softwaretestinghelp.com/binary-tree-in-cpp/)  
 
-* 트리에서 데이터와 브랜치(edge) 값을 관리하기 위해서는 트리 자료구조를 구현할때 **링크드 리스트**를 활용하는 것을 권장
+
 ## tree_code
+```cpp
+struct treeNode
+{
+	int data;
+	treeNode *right, *left;	
+};
+```
+* 트리에서 데이터와 브랜치(edge) 값을 관리하기 위해서는 트리 자료구조를 구현할때 **링크드 리스트**를 활용하는 것을 권장  
 
 ## insert_data_in_tree  
+```cpp
+#include <iostream>
+
+using namespace std;
+struct TreeNode
+{
+	int data;
+	TreeNode *lChild, *rChild;
+};
+
+class TreeNodeMgmt
+{
+private:
+	TreeNode * root;
+public:
+	TreeNodeMgmt()
+	{
+		root = nullptr;
+	}
+	void insert_node(int value);
+	void displayBST();
+	void printBinTree(TreeNode * root);
+};
+
+void TreeNodeMgmt::insert_node(int value)
+{
+	TreeNode * binary_tn = new TreeNode;
+	TreeNode * parent;
+	binary_tn->data = value;
+	binary_tn->lChild = nullptr;
+	binary_tn->rChild = nullptr;
+	
+	if(root == nullptr)
+	{
+		root = binary_tn;
+	}
+	else
+	{
+		TreeNode * ptr;
+		ptr = root;
+		while(ptr != nullptr)
+		{
+			parent = ptr;
+			if(value > ptr->data)
+				ptr = ptr->rChild;
+			else
+				ptr = ptr->lChild;
+		}
+		if(value > parent -> data)
+			parent->rChild = binary_tn;
+		else
+			parent->lChild = binary_tn;
+	}
+	
+}
+
+void TreeNodeMgmt::displayBST()
+{
+	printBinTree(root);
+}
+
+void TreeNodeMgmt::printBinTree(TreeNode * ptr)
+{
+	if(ptr != nullptr)
+	{
+		printBinTree(ptr->lChild);
+		cout << ptr->data << " ";
+		printBinTree(ptr->rChild);		
+	}
+}
+
+int main()
+{
+	TreeNodeMgmt bst;
+	bst.insert_node(20);
+	bst.insert_node(10);
+	bst.insert_node(5);
+	bst.insert_node(15);
+	bst.insert_node(40);
+	bst.insert_node(45);
+	bst.insert_node(30);
+	
+	bst.displayBST();
+		
+	return 0;
+}
+```
 
 ## search_tree  
+```cpp
+```
 
 ## delete_data_in_tree  
- 
+```cpp
+```
+
 ## 이진 탐색 트리 삭제
 
 ### Case 1. Leaf Node 삭제
 삭제할 node의 parent node가 삭제할 node를 가리키지 않도록함  
 parent node의 edge에 nullptr 대입  
+```cpp
+```
 
 ### Case 2. Child Node가 하나인 Node 삭제
 삭제할 노드의 parent node가 삭제할 노드의 child node를 가리키도록 함  
+```cpp
+```
 
 ### Case 3. Child Node가 두 개인 Node 삭제 
 **option1. 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 삭제할 Node의 Parent Node가 가리키도록 함**  
 option2. 삭제할 Node의 왼쪽 자식 중, 가장 큰 값을 삭제할 Node의 Parent Node가 가리키도록 함  
 
 #### Case 3-1. 삭제할 Node가 Parent Node의 왼쪽에 있을 때  
-
+Case 3-1-1. 삭제할 Node가 Parent Node의 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 Child Node가 없을 때  
+Case 3-1-2. 삭제할 Node가 Parent Node의 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때  
 #### Case 3-2. 삭제할 Node가 Parent Node의 오른쪽에 있을 때  
+Case 3-2-1. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 Child Node가 없을 때  
+Case 3-2-2. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때  
+
+```cpp
+```
 
 ## C++ 전체 코드
 ```cpp
