@@ -66,8 +66,9 @@ published: false
 *  이진 탐색 트리의 **<u>단점</u>**  
 	* 평균 시간 복잡도는 O(log n)이지만, 이는 트리가 균형이 잡혀있을 때의 평균시간 복잡도  
 	* 최악의 경우는 링크드 리스트와 동일한 성능을 보여줌 O(n)  
-	![https://www.quora.com/What-is-the-worse-case-time-complexity-for-a-binary-search-tree-for-searching](https://qph.fs.quoracdn.net/main-qimg-eccb472654af69385afe691e9958a713.webp)
 	[quora.com - worst case time complexity](https://www.quora.com/What-is-the-worse-case-time-complexity-for-a-binary-search-tree-for-searching)  
+	![https://www.quora.com/What-is-the-worse-case-time-complexity-for-a-binary-search-tree-for-searching](https://qph.fs.quoracdn.net/main-qimg-eccb472654af69385afe691e9958a713.webp)
+	
 	
 ## C++ code
 > [노드 클래스 만들기 - 링크드 리트스 활용](#tree_code)  
@@ -178,13 +179,33 @@ int main()
 
 ## search_tree  
 ```cpp
+bool TreeNodeMgmt::search_node(int value)
+{
+	return searchBinTree(root, value);
+}
+bool TreeNodeMgmt::searchBinTree(TreeNode * ptr, int value)
+{
+	TreeNode * tn = ptr;
+	while(tn != nullptr)
+	{
+		if(value == tn->data)
+			return true;
+		else
+		{
+			if(value > tn->data)
+				tn = tn->rChild;
+			else
+				tn = tn->lChild;
+		}	
+	}
+	return false;
+}
 ```
 
 ## delete_data_in_tree  
-```cpp
-```
 
 ## 이진 탐색 트리 삭제
+* 삭제할 노드가 없는 경우 false를 return 하고 함수 종료  
 
 ### Case 1. Leaf Node 삭제
 삭제할 node의 parent node가 삭제할 node를 가리키지 않도록함  
@@ -198,8 +219,8 @@ parent node의 edge에 nullptr 대입
 ```
 
 ### Case 3. Child Node가 두 개인 Node 삭제 
-**option1. 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 삭제할 Node의 Parent Node가 가리키도록 함**  
-option2. 삭제할 Node의 왼쪽 자식 중, 가장 큰 값을 삭제할 Node의 Parent Node가 가리키도록 함  
+**option1 - Rightmost. 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 삭제할 Node의 Parent Node가 가리키도록 함**  
+option2 - Leftmost. 삭제할 Node의 왼쪽 자식 중, 가장 큰 값을 삭제할 Node의 Parent Node가 가리키도록 함  
 
 #### Case 3-1. 삭제할 Node가 Parent Node의 왼쪽에 있을 때  
 Case 3-1-1. 삭제할 Node가 Parent Node의 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 Child Node가 없을 때  
