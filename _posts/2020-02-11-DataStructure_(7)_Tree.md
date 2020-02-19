@@ -211,11 +211,62 @@ bool TreeNodeMgmt::searchBinTree(TreeNode * ptr, int value)
 삭제할 node의 parent node가 삭제할 node를 가리키지 않도록함  
 parent node의 edge에 nullptr 대입  
 ```cpp
+void TreeNodeMgmt::deleteCBinTree(TreeNode *ptr, int value)
+{
+	if(!searchBinTree(ptr, value))
+		return;
+	
+	TreeNode * parent;
+	TreeNode * tn = ptr;
+	
+	while(tn != nullptr)
+	{
+		if(value == tn->data)
+			break;
+		else
+		{
+			parent = tn;
+			if(value > tn->data)
+				tn = tn->rChild;
+			else
+				tn = tn->lChild;
+		}
+	}
+	
+	//Case1. Leaf Node deletion
+	if(tn->rChild == nullptr && tn->lChild == nullptr)
+	{
+		if(value < parent->data)
+			parent->lChild = nullptr;
+		else
+			parent->rChild = nullptr;
+		delete tn;	
+	}
+}
 ```
 
 ### Case 2. Child Node가 하나인 Node 삭제
 삭제할 노드의 parent node가 삭제할 노드의 child node를 가리키도록 함  
 ```cpp
+//Case2. One Degree Node deletion	
+if(tn->rChild == nullptr && tn->lChild != nullptr)
+{
+	if(value < parent->data)
+		parent->lChild = tn->lChild;
+	else
+		parent->rChild = tn->lChild;
+	delete tn;
+	return;
+}
+else if(tn->rChild != nullptr && tn->lChild == nullptr)
+{
+	if(value < parent->data)
+		parent->lChild = tn->rChild;
+	else
+		parent->rChild = tn->rChild;
+	delete tn;
+	return;
+}
 ```
 
 ### Case 3. Child Node가 두 개인 Node 삭제 
