@@ -5,7 +5,6 @@ description: (7) Understanding of Tree
 modified: 2020-02-11
 tags: [Data Structure, Tree]
 categories: [DataStructure]
-published: false
 ---
 
 <!--트리는 면접에서 가장 자주 물어보는 자료구조-->
@@ -281,8 +280,340 @@ Case 3-2-1. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node
 Case 3-2-2. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때  
 
 ```cpp
+void TreeNodeMgmt::deleteCBinTree(TreeNode *ptr, int value)
+{
+	if(!searchBinTree(ptr, value))
+		return;
+
+	TreeNode * parent;
+	TreeNode * tn = ptr;
+	
+	while(tn != nullptr)
+	{
+		if(value == tn->data)
+			break;
+		else
+		{
+			parent = tn;
+			if(value > tn->data)
+				tn = tn->rChild;
+			else
+				tn = tn->lChild;
+		}
+	}
+	//Case1. Leaf Node deletion
+	if(tn->rChild == nullptr && tn->lChild == nullptr)
+	{
+		if(value < parent->data)
+			parent->lChild = nullptr;
+		else
+			parent->rChild = nullptr;
+		delete tn;
+		
+		return;
+	}
+	//Case2. One Degree Node deletion	
+	if(tn->rChild == nullptr && tn->lChild != nullptr)
+	{
+		if(value < parent->data)
+			parent->lChild = tn->lChild;
+		else
+			parent->rChild = tn->lChild;
+		delete tn;
+		return;
+	}
+	else if(tn->rChild != nullptr && tn->lChild == nullptr)
+	{
+		if(value < parent->data)
+			parent->lChild = tn->rChild;
+		else
+			parent->rChild = tn->rChild;
+		delete tn;
+		return;
+	}
+	//Case3. Two Degree Node deletion
+	if(tn->rChild != nullptr && tn->lChild != nullptr)
+	{
+		if(value < parent->data) //Case 3-1
+		{	
+			TreeNode * changeNode = tn->rChild;
+			TreeNode * changeNodeParent;
+			while(changeNode->lChild != nullptr)
+			{
+				changeNodeParent = changeNode;
+				changeNode = changeNode->lChild;
+			}
+			
+			if(changeNode->rChild != nullptr)
+				changeNodeParent->lChild = changeNode->rChild;
+			else
+				changeNodeParent->lChild = nullptr;
+			parent->lChild = changeNode;
+			changeNode->rChild = tn->rChild;
+			changeNode->lChild = changeNode->lChild;
+			
+			delete tn;
+			return;
+		}
+		else //Case 3-2 
+		{
+			TreeNode * changeNode = tn->rChild;
+			TreeNode * changeNodeParent;
+			while(changeNode->lChild != nullptr)
+			{
+				changeNodeParent = changeNode;
+				changeNode = changeNode->lChild;
+			}
+			
+			if(changeNode->rChild != nullptr)
+				changeNodeParent->lChild = changeNode->rChild;
+			else
+				changeNodeParent->lChild = nullptr;
+			parent->rChild = changeNode;
+			changeNode->rChild = tn->rChild;
+			changeNode->lChild = changeNode->lChild;
+			
+			delete tn;
+			return;
+		}	
+	}
+}
 ```
 
 ## C++ 전체 코드
 ```cpp
+#include <iostream>
+
+using namespace std;
+struct TreeNode
+{
+	int data;
+	TreeNode *lChild, *rChild;
+};
+
+class TreeNodeMgmt
+{
+private:
+	TreeNode * root;
+public:
+	TreeNodeMgmt()
+	{
+		root = nullptr;
+	}
+	void insert_node(int value);
+	void displayBST();
+	void printBinTree(TreeNode * ptr);
+	bool search_node(int value);
+	bool searchBinTree(TreeNode * ptr, int value);
+	void delete_node(int value);
+	void deleteCBinTree(TreeNode * ptr, int value);
+};
+
+void TreeNodeMgmt::insert_node(int value)
+{
+	TreeNode * binary_tn = new TreeNode;
+	TreeNode * parent;
+	binary_tn->data = value;
+	binary_tn->lChild = nullptr;
+	binary_tn->rChild = nullptr;
+	
+	if(root == nullptr)
+	{
+		root = binary_tn;
+	}
+	else
+	{
+		TreeNode * ptr;
+		ptr = root;
+		while(ptr != nullptr)
+		{
+			parent = ptr;
+			if(value > ptr->data)
+				ptr = ptr->rChild;
+			else
+				ptr = ptr->lChild;
+		}
+		if(value > parent -> data)
+			parent->rChild = binary_tn;
+		else
+			parent->lChild = binary_tn;
+	}
+	
+}
+
+void TreeNodeMgmt::displayBST()
+{
+	printBinTree(root);
+	cout << endl;
+}
+
+void TreeNodeMgmt::printBinTree(TreeNode * ptr)
+{
+	if(ptr != nullptr)
+	{
+		printBinTree(ptr->lChild);
+		cout << ptr->data << " ";
+		printBinTree(ptr->rChild);
+	}
+}
+bool TreeNodeMgmt::search_node(int value)
+{
+	return searchBinTree(root, value);
+}
+bool TreeNodeMgmt::searchBinTree(TreeNode * ptr, int value)
+{
+	TreeNode * tn = ptr;
+	while(tn != nullptr)
+	{
+		if(value == tn->data)
+			return true;
+		else
+		{
+			if(value > tn->data)
+				tn = tn->rChild;
+			else
+				tn = tn->lChild;
+		}
+	}
+}
+void TreeNodeMgmt::delete_node(int value)
+{
+	deleteCBinTree(root, value);
+}
+void TreeNodeMgmt::deleteCBinTree(TreeNode *ptr, int value)
+{
+	if(!searchBinTree(ptr, value))
+		return;
+
+	TreeNode * parent;
+	TreeNode * tn = ptr;
+	
+	while(tn != nullptr)
+	{
+		if(value == tn->data)
+			break;
+		else
+		{
+			parent = tn;
+			if(value > tn->data)
+				tn = tn->rChild;
+			else
+				tn = tn->lChild;
+		}
+	}
+	//Case1. Leaf Node deletion
+	if(tn->rChild == nullptr && tn->lChild == nullptr)
+	{
+		if(value < parent->data)
+			parent->lChild = nullptr;
+		else
+			parent->rChild = nullptr;
+		delete tn;
+		
+		return;
+	}
+	//Case2. One Degree Node deletion	
+	if(tn->rChild == nullptr && tn->lChild != nullptr)
+	{
+		if(value < parent->data)
+			parent->lChild = tn->lChild;
+		else
+			parent->rChild = tn->lChild;
+		delete tn;
+		return;
+	}
+	else if(tn->rChild != nullptr && tn->lChild == nullptr)
+	{
+		if(value < parent->data)
+			parent->lChild = tn->rChild;
+		else
+			parent->rChild = tn->rChild;
+		delete tn;
+		return;
+	}
+	//Case3. Two Degree Node deletion
+	if(tn->rChild != nullptr && tn->lChild != nullptr)
+	{
+		if(value < parent->data) //Case 3-1
+		{	
+			TreeNode * changeNode = tn->rChild;
+			TreeNode * changeNodeParent;
+			while(changeNode->lChild != nullptr)
+			{
+				changeNodeParent = changeNode;
+				changeNode = changeNode->lChild;
+			}
+			
+			if(changeNode->rChild != nullptr)
+				changeNodeParent->lChild = changeNode->rChild;
+			else
+				changeNodeParent->lChild = nullptr;
+			parent->lChild = changeNode;
+			changeNode->rChild = tn->rChild;
+			changeNode->lChild = changeNode->lChild;
+			
+			delete tn;
+			return;
+		}
+		else //Case 3-2 
+		{
+			TreeNode * changeNode = tn->rChild;
+			TreeNode * changeNodeParent;
+			while(changeNode->lChild != nullptr)
+			{
+				changeNodeParent = changeNode;
+				changeNode = changeNode->lChild;
+			}
+			
+			if(changeNode->rChild != nullptr)
+				changeNodeParent->lChild = changeNode->rChild;
+			else
+				changeNodeParent->lChild = nullptr;
+			parent->rChild = changeNode;
+			changeNode->rChild = tn->rChild;
+			changeNode->lChild = changeNode->lChild;
+			
+			delete tn;
+			return;
+		}
+	}
+}
+
+int main()
+{
+	TreeNodeMgmt bst;
+	bst.insert_node(20);
+	bst.insert_node(10);
+	bst.insert_node(5);
+	bst.insert_node(15);
+	bst.insert_node(40);
+	bst.insert_node(45);
+	bst.insert_node(30);
+	
+	bst.displayBST();
+	
+	//search node
+	if(bst.search_node(45))
+		cout << "node search success" <<endl;
+	else
+		cout << "node search fail" <<endl;
+	
+	//case1 - Leaf node deletion
+	bst.delete_node(30);
+	bst.displayBST();
+	
+	//case2 - one Degree node deletion
+	bst.insert_node(30);
+	bst.insert_node(25);
+	bst.delete_node(30);
+	bst.displayBST();
+	
+	//case3 - two Degree node deletion
+	bst.insert_node(30);
+	bst.insert_node(35);
+	bst.delete_node(30);
+	bst.displayBST();
+	
+	return 0;
+}
 ```
