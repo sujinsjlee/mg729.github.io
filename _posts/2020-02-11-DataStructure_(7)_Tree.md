@@ -54,13 +54,15 @@ categories: [DataStructure]
 		* 한 번 실행시마다, 50%의 실행할 수도 있는 탐색경우의 수를 제거한다는 의미  
 		* 50%의 실행시간을 단축  
 
-	log n의 시간 복잡도에 대한 증명
-	1. n 의 크기를 반씩 줄이는 걸 가정
-	n 이 반씩 줄다보면 k 단계에서 최종적으로 1이 된다 가정하자.
-	2. 단계별로 n -> n/2 -> n/4 -> n/2의k 승 진행
-	3. n = 2 의 k 승
+
+	log n의 시간 복잡도에 대한 증명  
+	1. n 의 크기를 반씩 줄이는 걸 가정  
+	n 이 반씩 줄다보면 k 단계에서 최종적으로 1이 된다 가정하자.  
+	2. 단계별로 n -> n/2 -> n/4 -> n/2의k 승 진행  
+	3. n = 2 의 k 승  
 	4. 양쪽에 로그 붙이면 logN = k 가 됨.  
 	{: .notice--success}
+
 
 *  이진 탐색 트리의 **<u>단점</u>**  
 	* 평균 시간 복잡도는 O(log n)이지만, 이는 트리가 균형이 잡혀있을 때의 평균시간 복잡도  
@@ -89,29 +91,6 @@ struct treeNode
 
 ## insert_data_in_tree  
 ```cpp
-#include <iostream>
-
-using namespace std;
-struct TreeNode
-{
-	int data;
-	TreeNode *lChild, *rChild;
-};
-
-class TreeNodeMgmt
-{
-private:
-	TreeNode * root;
-public:
-	TreeNodeMgmt()
-	{
-		root = nullptr;
-	}
-	void insert_node(int value);
-	void displayBST();
-	void printBinTree(TreeNode * root);
-};
-
 void TreeNodeMgmt::insert_node(int value)
 {
 	TreeNode * binary_tn = new TreeNode;
@@ -142,37 +121,6 @@ void TreeNodeMgmt::insert_node(int value)
 			parent->lChild = binary_tn;
 	}
 	
-}
-
-void TreeNodeMgmt::displayBST()
-{
-	printBinTree(root);
-}
-
-void TreeNodeMgmt::printBinTree(TreeNode * ptr)
-{
-	if(ptr != nullptr)
-	{
-		printBinTree(ptr->lChild);
-		cout << ptr->data << " ";
-		printBinTree(ptr->rChild);		
-	}
-}
-
-int main()
-{
-	TreeNodeMgmt bst;
-	bst.insert_node(20);
-	bst.insert_node(10);
-	bst.insert_node(5);
-	bst.insert_node(15);
-	bst.insert_node(40);
-	bst.insert_node(45);
-	bst.insert_node(30);
-	
-	bst.displayBST();
-		
-	return 0;
 }
 ```
 
@@ -280,103 +228,51 @@ Case 3-2-1. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node
 Case 3-2-2. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때  
 
 ```cpp
-void TreeNodeMgmt::deleteCBinTree(TreeNode *ptr, int value)
+//Case3. Two Degree Node deletion
+if(tn->rChild != nullptr && tn->lChild != nullptr)
 {
-	if(!searchBinTree(ptr, value))
-		return;
-
-	TreeNode * parent;
-	TreeNode * tn = ptr;
-	
-	while(tn != nullptr)
-	{
-		if(value == tn->data)
-			break;
-		else
+	if(value < parent->data) //Case 3-1
+	{	
+		TreeNode * changeNode = tn->rChild;
+		TreeNode * changeNodeParent;
+		while(changeNode->lChild != nullptr)
 		{
-			parent = tn;
-			if(value > tn->data)
-				tn = tn->rChild;
-			else
-				tn = tn->lChild;
+			changeNodeParent = changeNode;
+			changeNode = changeNode->lChild;
 		}
-	}
-	//Case1. Leaf Node deletion
-	if(tn->rChild == nullptr && tn->lChild == nullptr)
-	{
-		if(value < parent->data)
-			parent->lChild = nullptr;
-		else
-			parent->rChild = nullptr;
-		delete tn;
 		
-		return;
-	}
-	//Case2. One Degree Node deletion	
-	if(tn->rChild == nullptr && tn->lChild != nullptr)
-	{
-		if(value < parent->data)
-			parent->lChild = tn->lChild;
+		if(changeNode->rChild != nullptr)
+			changeNodeParent->lChild = changeNode->rChild;
 		else
-			parent->rChild = tn->lChild;
+			changeNodeParent->lChild = nullptr;
+		parent->lChild = changeNode;
+		changeNode->rChild = tn->rChild;
+		changeNode->lChild = changeNode->lChild;
+		
 		delete tn;
 		return;
 	}
-	else if(tn->rChild != nullptr && tn->lChild == nullptr)
+	else //Case 3-2 
 	{
-		if(value < parent->data)
-			parent->lChild = tn->rChild;
-		else
-			parent->rChild = tn->rChild;
-		delete tn;
-		return;
-	}
-	//Case3. Two Degree Node deletion
-	if(tn->rChild != nullptr && tn->lChild != nullptr)
-	{
-		if(value < parent->data) //Case 3-1
-		{	
-			TreeNode * changeNode = tn->rChild;
-			TreeNode * changeNodeParent;
-			while(changeNode->lChild != nullptr)
-			{
-				changeNodeParent = changeNode;
-				changeNode = changeNode->lChild;
-			}
-			
-			if(changeNode->rChild != nullptr)
-				changeNodeParent->lChild = changeNode->rChild;
-			else
-				changeNodeParent->lChild = nullptr;
-			parent->lChild = changeNode;
-			changeNode->rChild = tn->rChild;
-			changeNode->lChild = changeNode->lChild;
-			
-			delete tn;
-			return;
-		}
-		else //Case 3-2 
+		TreeNode * changeNode = tn->rChild;
+		TreeNode * changeNodeParent;
+		while(changeNode->lChild != nullptr)
 		{
-			TreeNode * changeNode = tn->rChild;
-			TreeNode * changeNodeParent;
-			while(changeNode->lChild != nullptr)
-			{
-				changeNodeParent = changeNode;
-				changeNode = changeNode->lChild;
-			}
-			
-			if(changeNode->rChild != nullptr)
-				changeNodeParent->lChild = changeNode->rChild;
-			else
-				changeNodeParent->lChild = nullptr;
-			parent->rChild = changeNode;
-			changeNode->rChild = tn->rChild;
-			changeNode->lChild = changeNode->lChild;
-			
-			delete tn;
-			return;
-		}	
-	}
+			changeNodeParent = changeNode;
+			changeNode = changeNode->lChild;
+		}
+		
+		if(changeNode->rChild != nullptr)
+			changeNodeParent->lChild = changeNode->rChild;
+		else
+			changeNodeParent->lChild = nullptr;
+		parent->rChild = changeNode;
+		changeNode->rChild = tn->rChild;
+		changeNode->lChild = changeNode->lChild;
+		
+		delete tn;
+		return;
+	}	
 }
 ```
 
