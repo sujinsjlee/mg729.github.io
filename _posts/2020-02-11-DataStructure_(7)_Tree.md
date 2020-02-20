@@ -217,15 +217,15 @@ else if(tn->rChild != nullptr && tn->lChild == nullptr)
 ```
 
 ### Case 3. Child Node가 두 개인 Node 삭제 
-**option1 - Rightmost. 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 삭제할 Node의 Parent Node가 가리키도록 함**  
-option2 - Leftmost. 삭제할 Node의 왼쪽 자식 중, 가장 큰 값을 삭제할 Node의 Parent Node가 가리키도록 함  
+>* **option1 - Rightmost. 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 삭제할 Node의 Parent Node가 가리키도록 함**  
+>* option2 - Leftmost. 삭제할 Node의 왼쪽 자식 중, 가장 큰 값을 삭제할 Node의 Parent Node가 가리키도록 함  
 
-#### Case 3-1. 삭제할 Node가 Parent Node의 왼쪽에 있을 때  
-Case 3-1-1. 삭제할 Node가 Parent Node의 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 Child Node가 없을 때  
-Case 3-1-2. 삭제할 Node가 Parent Node의 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때  
-#### Case 3-2. 삭제할 Node가 Parent Node의 오른쪽에 있을 때  
-Case 3-2-1. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 Child Node가 없을 때  
-Case 3-2-2. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때  
+* Case 3-1. 삭제할 Node가 Parent Node의 왼쪽에 있을 때  
+	* Case 3-1-1. 삭제할 Node가 Parent Node의 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 Child Node가 없을 때  
+	* Case 3-1-2. 삭제할 Node가 Parent Node의 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때  
+* Case 3-2. 삭제할 Node가 Parent Node의 오른쪽에 있을 때  
+	* Case 3-2-1. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 Child Node가 없을 때  
+	* Case 3-2-2. 삭제할 Node가 Parent Node의 오른쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때  
 
 ```cpp
 //Case3. Two Degree Node deletion
