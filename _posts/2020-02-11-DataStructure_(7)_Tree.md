@@ -55,7 +55,7 @@ categories: [DataStructure]
 		* 50%의 실행시간을 단축  
 
 
-	log n의 시간 복잡도에 대한 증명  
+	* log n의 시간 복잡도에 대한 증명  
 	1. n 의 크기를 반씩 줄이는 걸 가정  
 	n 이 반씩 줄다보면 k 단계에서 최종적으로 1이 된다 가정하자.  
 	2. 단계별로 n -> n/2 -> n/4 -> n/2의k 승 진행  
@@ -158,7 +158,7 @@ bool TreeNodeMgmt::searchBinTree(TreeNode * ptr, int value)
 삭제할 node의 parent node가 삭제할 node를 가리키지 않도록함  
 parent node의 edge에 nullptr 대입  
 ```cpp
-void TreeNodeMgmt::deleteCBinTree(TreeNode *ptr, int value)
+void TreeNodeMgmt::deleteBinTree(TreeNode *ptr, int value)
 {
 	if(!searchBinTree(ptr, value))
 		return;
@@ -247,7 +247,7 @@ if(tn->rChild != nullptr && tn->lChild != nullptr)
 			changeNodeParent->lChild = nullptr;
 		parent->lChild = changeNode;
 		changeNode->rChild = tn->rChild;
-		changeNode->lChild = changeNode->lChild;
+		changeNode->lChild = tn->lChild;
 		
 		delete tn;
 		return;
@@ -268,7 +268,7 @@ if(tn->rChild != nullptr && tn->lChild != nullptr)
 			changeNodeParent->lChild = nullptr;
 		parent->rChild = changeNode;
 		changeNode->rChild = tn->rChild;
-		changeNode->lChild = changeNode->lChild;
+		changeNode->lChild = tn->lChild;
 		
 		delete tn;
 		return;
@@ -302,7 +302,7 @@ public:
 	bool search_node(int value);
 	bool searchBinTree(TreeNode * ptr, int value);
 	void delete_node(int value);
-	void deleteCBinTree(TreeNode * ptr, int value);
+	void deleteBinTree(TreeNode * ptr, int value);
 };
 
 void TreeNodeMgmt::insert_node(int value)
@@ -349,7 +349,7 @@ void TreeNodeMgmt::printBinTree(TreeNode * ptr)
 	{
 		printBinTree(ptr->lChild);
 		cout << ptr->data << " ";
-		printBinTree(ptr->rChild);
+		printBinTree(ptr->rChild);		
 	}
 }
 bool TreeNodeMgmt::search_node(int value)
@@ -374,9 +374,9 @@ bool TreeNodeMgmt::searchBinTree(TreeNode * ptr, int value)
 }
 void TreeNodeMgmt::delete_node(int value)
 {
-	deleteCBinTree(root, value);
+	deleteBinTree(root, value);
 }
-void TreeNodeMgmt::deleteCBinTree(TreeNode *ptr, int value)
+void TreeNodeMgmt::deleteBinTree(TreeNode *ptr, int value)
 {
 	if(!searchBinTree(ptr, value))
 		return;
@@ -446,7 +446,7 @@ void TreeNodeMgmt::deleteCBinTree(TreeNode *ptr, int value)
 				changeNodeParent->lChild = nullptr;
 			parent->lChild = changeNode;
 			changeNode->rChild = tn->rChild;
-			changeNode->lChild = changeNode->lChild;
+			changeNode->lChild = tn->lChild; //nullptr
 			
 			delete tn;
 			return;
@@ -467,11 +467,11 @@ void TreeNodeMgmt::deleteCBinTree(TreeNode *ptr, int value)
 				changeNodeParent->lChild = nullptr;
 			parent->rChild = changeNode;
 			changeNode->rChild = tn->rChild;
-			changeNode->lChild = changeNode->lChild;
+			changeNode->lChild = tn->lChild;
 			
 			delete tn;
 			return;
-		}
+		}	
 	}
 }
 
