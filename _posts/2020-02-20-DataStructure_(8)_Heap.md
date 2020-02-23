@@ -71,6 +71,7 @@ categories: [DataStructure]
 * 힙 구현 **std::make_heap**  
 * 힙 데이터 삽입 **std::push_heap**  
 * 힙 데이터 삭제 **std::pop_heap**  
+* **std::is_heap**  
 
 ```cpp
 #include <iostream>

@@ -10,7 +10,7 @@ logo:             images/logo.png # logo visible in the topbar
 excerpt_separator: <!--more-->
 
 #site domain
-url: https://mg729.github.io/
+url: https://mg729.github.io
 
 # menu
 menu:
