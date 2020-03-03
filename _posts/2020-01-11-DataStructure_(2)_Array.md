@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Structure - (2) 배열
+title: Data Structure - (2) Array
 description: (2) Understanding of Array
 modified: 2020-01-11
 tags: [Data Structure, Array]
@@ -8,23 +8,23 @@ categories: [DataStructure]
 ---
 
 ##  Array  
->**같은 데이터 타입의 데이터를 나열하고, 각 데이터를 인덱스에 대응하도록 구성한 데이터 구조**  
+>**Array stores a fixed-size sequential collection of elements of same type**  
+> each data is correspond to an index  
+> By index, direct access to data is possible    
+> Sequentially process the same type of data  
 
-같은 종류의 데이터를 효율적으로 순차적으로 처리  
-인덱스를 활용하여 나열된 데이터의 일부분에 바로 접근 가능  
-_Array stores a fixed-size sequential collection of elements of the same type._ 
+## Advantages of Arrays
+* Quick access using index  
 
-## 배열의 장점  
-* 인덱스 번호를 활용한 빠른 접근가능  
+## Disadvantages of Arrays
+* It is _not easy to add or delete data_ if data is variable.  
+	* Since the fixed amount of memory space is declared, it is difficult to add new data unless you know the maximum length of the array.  
+	* After deleting the data, there is a problem to pull the data that was existing behind   
+* When declaring data of array type, size of maximum length must be declared in advance  
 
-## 배열의 단점  
-* 데이터가 가변적인 경우 데이터의 추가, 삭제 쉽지 않음  
-고정된 크기의 공간이 선언되어있기 때문에 배열의 최대 길이를 모른다면 새로운 데이터 추가가 어려움  
-데이터를 삭제하고나서 기존 뒤의 데이터를 앞으로 당겨여하는 문제가 있음   
-* 배열타입의 데이터 선언할 때 미리 최대 길이의 size를 지정해야함  
 
-## 예제 (C++)
-아래의 dataset 내부에서 'M'이 몇 번 나왔는지에 대한 빈도 수 출력  
+## Example (C++)  
+Count frequency of how many **'M'** has been appeared inside the dataset  
 
 {% highlight c++ %}
 #include<stdio.h>
@@ -56,5 +56,4 @@ int main()
 {% endhighlight %}
 
 
-* 2차원 배열과 포인터 배열  
-[Two dimension array and Pointer array](http://www.parkjonghyuk.net/lecture/programming1/lecturenote/chap06-6.pdf).
+* [Two dimension array and Pointer array](http://www.parkjonghyuk.net/lecture/programming1/lecturenote/chap06-6.pdf).
