@@ -43,6 +43,7 @@ categories: [Algorithm]
 ## Algorithm - Pseudocode
 <iframe
   src="https://carbon.now.sh/embed?bg=rgba(168%2C192%2C210%2C1)&t=seti&wt=none&l=text%2Fx-c%2B%2Bsrc&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=true&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=1x&wm=false&code=for(int%2520n%2520%253D%25200%253B%2520n%2520%253C%2520length%2520of%2520the%2520entire%2520data%2520-1%253B%2520n%252B%252B)%250A%2509for(int%2520index%2520%253D%25200%253B%2520index%2520%253C%2520length%2520of%2520the%2520entire%2520data%2520-%2520n%2520-1%2520%253B%2520index%252B%252B)%250A%2509%2509if(%2520data1%2520%253E%2520data2)%250A%2509%2509%2509swap"
+  style="width:100%; height:100%; border:0; overflow:hidden;"
   sandbox="allow-scripts allow-same-origin">
 </iframe>  
 <!--
