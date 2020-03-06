@@ -21,7 +21,6 @@ categories: [Algorithm]
 1. two datas for bubble sort   
 (3 2)  
 (2 __3__)  
-{: .notice--info}
 `condition check : 1`  
 `turn : 1`  
 
@@ -29,7 +28,6 @@ categories: [Algorithm]
 (5 4 3)  
 (4 3 __5__)  
 (3 __4__ __5__)  
-{: .notice--info}
 `condition check : 2`  
 `turn : 2`  
 
@@ -38,19 +36,14 @@ categories: [Algorithm]
 (4 3 2 __5__)  
 (3 2 __4__ __5__)
 (2 __3__ __4__ __5__) 
-{: .notice--info}
 `condition check : 3`  
 `turn : 3`  
 
 
 ## Algorithm - Pseudocode
-```cpp
-for(int n = 0; n < length of the entire data -1; n++)
-	for(int index = 0; index < length of the entire data - n -1 ; index++)
-		if( data1 > data2)
-			swap
-```	
-{: .notice--success}
+![bubble sort algorithm](https://carbon.now.sh/?bg=rgba(168%252C192%252C210%252C1)&t=seti&wt=none&l=text%252Fx-c%252B%252Bsrc&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=true&fl=1&fm=Hack&fs=14px&lh=133%2525&si=false&es=2x&wm=false&code=for(int%252520n%252520%25253D%2525200%25253B%252520n%252520%25253C%252520length%252520of%252520the%252520entire%252520data%252520-1%25253B%252520n%25252B%25252B)%25250A%252509for(int%252520index%252520%25253D%2525200%25253B%252520index%252520%25253C%252520length%252520of%252520the%252520entire%252520data%252520-%252520n%252520-1%252520%25253B%252520index%25252B%25252B)%25250A%252509%252509if(%252520data1%252520%25253E%252520data2)%25250A%252509%252509%252509swap)
+
+
 `length of the entire data - n -1`
 * The reason for **-n** is to do condition check only on unsorted data  
 * because the data of the back is sorted after every each turn.     
