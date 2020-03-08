@@ -47,7 +47,7 @@ categories: [Algorithm]
 `turn : 3`  
 
 
-## Algorithm - Pseudocode
+## Pseudocode
 [![carbon_code_highlighter](/images/carbonBubbleSort.png)](https://carbon.now.sh/)
 
 * **length of the entire data - i -1**
