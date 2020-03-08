@@ -53,6 +53,8 @@ locale:      ko_KR
 future:      true
 highlighter: rouge
 markdown:    kramdown
+lsi: false
+incremental: false
 sass:
   sass_dir: _sass
   style: compressed

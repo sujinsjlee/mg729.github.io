@@ -5,6 +5,7 @@ description: (1) Understanding of bubble sort
 modified: 2020-03-01
 tags: [Algorithm]
 categories: [Algorithm]
+use_math: true
 ---
 
 ## Bubble sort
@@ -65,7 +66,7 @@ categories: [Algorithm]
 5. If swap == false :  break, because the list is already sorted  
  
 ## Time Complexity
-> two <u>for loops</u> : **O(n^2)**  
+> two <u>for loops</u> : **$O(n^2)$**  
 
 If entire lists are already sorted, the time complexity is *O(n)*  
 
