@@ -48,7 +48,7 @@ categories: [Algorithm]
 
 
 ## Algorithm - Pseudocode
-![carbon_code_highlighter](/images/carbonBubbleSort.png)
+[![carbon_code_highlighter](/images/carbonBubbleSort.png)](https://carbon.now.sh/)
 
 * **length of the entire data - i -1**
 * The reason for **- i**   
@@ -58,9 +58,9 @@ categories: [Algorithm]
 
 1. <u>for num in range(len(data_list))</u> : repeat  
 2. `swap = false` (make a flag to check swap was executed)  
-3. Inside the second roop, <u>for index in range(len(data_list) - i - 1)</u> : i - 1 repeat  
+3. Inside the second roop, <u>for index in range(len(data_list) - i - 1)</u> : repeat  
 4. If data_list[index] > data_list[index + 1]   
-	* Swappint two datas     
+	* Swapping two datas     
 	* `swap = true`  
 5. If swap == false :  break, because the list is already sorted  
  
