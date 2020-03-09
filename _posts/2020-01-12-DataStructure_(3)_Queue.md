@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Structure - (3) 큐
+title: Data Structure - Queue (Concept and C++ code)
 description: (3) Understanding of Queue
 modified: 2020-01-12
 tags: [Data Structure, Queue]

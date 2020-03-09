@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Structure - (6) 해쉬 테이블
+title: Data Structure - Hash Table (Concept and C++ code)
 description: (6) Understanding of Hash Table
 modified: 2020-01-30
 tags: [Data Structure, HashTable]

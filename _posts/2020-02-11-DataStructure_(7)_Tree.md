@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Structure - (7) 트리
+title: Data Structure - Tree (Concept and C++ code)
 description: (7) Understanding of Tree
 modified: 2020-02-11
 tags: [Data Structure, Tree]

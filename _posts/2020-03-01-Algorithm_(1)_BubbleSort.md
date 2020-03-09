@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Algorithm - Bubble Sort
+title: Algorithm - Bubble Sort (Concept,Pseudocode and C++ code)
 description: (1) Understanding of bubble sort
 modified: 2020-03-01
 tags: [Algorithm]

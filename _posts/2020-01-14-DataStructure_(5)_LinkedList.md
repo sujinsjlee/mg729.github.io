@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Structure - (5) 연결 리스트
+title: Data Structure - Linked List (Concept and C++ code)
 description: (5) Understanding of Linked List
 modified: 2020-01-14
 tags: [Data Structure, Linked List]

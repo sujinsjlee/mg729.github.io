@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Structure - (2) Array
+title: Data Structure - Array (Concept and C++ code)
 description: (2) Understanding of Array
 modified: 2020-01-11
 tags: [Data Structure, Array]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Structure - (8) 힙
+title: Data Structure - Heap (Concept and C++ code)
 description: (8) Understanding of Heap
 modified: 2020-02-20
 tags: [Data Structure, Heap]

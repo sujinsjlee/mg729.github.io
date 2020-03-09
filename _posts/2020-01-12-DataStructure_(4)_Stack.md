@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Structure - (4) 스택
+title: Data Structure - Stack (Concept and C++ code)
 description: (4) Understanding of Stack
 modified: 2020-01-13
 tags: [Data Structure, Stack]

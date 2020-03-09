@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Structure - (1) What is Data Structure and Algorithm?
+title: Data Structure - What is Data Structure and Algorithm?
 description: (1) Understanding of Data Structure and Algorithm
 modified: 2020-01-11
 tags: [Data Structure]
