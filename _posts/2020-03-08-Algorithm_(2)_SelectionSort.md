@@ -5,6 +5,7 @@ description: (2) Understanding of Selection sort
 modified: 2020-03-08
 tags: [Algorithm]
 categories: [Algorithm]
+use_math: true
 ---
 
 ## Selection Sort  
@@ -50,7 +51,7 @@ categories: [Algorithm]
 `standard : 2`  
 
 ## Pseudocode  
-[![carbon_code_highlighter](/images/carbonSelectionSort.png)](https://carbon.now.sh/)
+[![carbon_code_highlighter](/images/carbonselectionsort.png)](https://carbon.now.sh/)
 
 1. for(int standard = 0; standard < len(data_list) - 1 ; ++standard) : repeat for loop  
 2. lowest = standard  
