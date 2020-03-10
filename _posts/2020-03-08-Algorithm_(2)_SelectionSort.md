@@ -35,8 +35,7 @@ use_math: true
 
 	| data index for comparing  | comparing start point index  | comparing end point index  |
 	| :---: | :---: |:---: |
-	| 0   | 1           | 2   |
-	| 1   | 2           | 2   |
+	| 0   | 1           | 1   |
 
 2. **_three_ datas for selection sort**  
 (3 4 2)  
@@ -45,9 +44,8 @@ use_math: true
 
 	| data index for comparing  | comparing start point index  | comparing end point index  |
 	| :---: | :---: | :---: |
-	| 0   | 1           | 3   |
-	| 1   | 2           | 3   |
-	| 2   | 3           | 3   |
+	| 0   | 1           | 2   |
+	| 1   | 2           | 2  | 
 
 3. **_four_ datas for selection sort**  
 (4 5 3 2)  
@@ -57,10 +55,9 @@ use_math: true
 
 	| data index for comparing  | comparing start point index  | comparing end point index  |
 	| :---: | :---: | :---: |
-	| 0   | 1           | 4   |
-	| 1   | 2           | 4   |
-	| 2   | 3           | 4   |
-	| 3   | 4           | 4   |
+	| 0   | 1           | 3   |
+	| 1   | 2           | 3   |
+	| 2   | 3           | 3   |
 
 
 ## Pseudocode  
