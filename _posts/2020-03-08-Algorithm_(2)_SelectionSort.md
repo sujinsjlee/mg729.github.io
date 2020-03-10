@@ -29,37 +29,43 @@ use_math: true
 > Every each time the for loop executes, sort after the first index value from the previous loop  
 > __turn__ : One rotation turn of condition check for all list   
 
-
 1. two datas for selection sort   
 (3 2)  
 (**2** 3)  
-`turn : 1`  
-`standard : 0`  
 
 2. tree datas for selection sort  
 (3 4 2)  
 (**2** 4 3)  
 (**2** **3** 4)  
-`turn : 2`  
-`standard : 1`  
+| data index for comparing  | comparing start point index  | comparing end point index  |
+| --- | ----------- | --- |
+| 0   | 1           | 3   |
+| 1   | 2           | 3   |
+| 2   | 3           | 3   |
+
 3. four datas for selection sort  
 (4 5 3 2)  
 (**2** 5 3 4)  
 (**2 3** 5 4)  
 (**2 3 4** 5)  
-`turn : 3`  
-`standard : 2`  
+| data index for comparing  | comparing start point index  | comparing end point index  |
+| --- | ----------- | --- |
+| 0   | 1           | 4   |
+| 1   | 2           | 4   |
+| 2   | 3           | 4   |
+| 3   | 4           | 4   |
+
 
 ## Pseudocode  
 [![carbon_code_highlighter](/images/carbonselectionsort.png)](https://carbon.now.sh/)
 
 1. for(int standard = 0; standard < len(data_list) - 1 ; ++standard) : repeat for loop  
 2. lowest = standard  
-3. for(int num = 0; num < len(data_list); ++num) : repeat after __standard__   
-	* if( data_list[lowest] > data_list[num] )
-		* lowest = num
+3. for(int index = 0; index < len(data_list); ++index) : repeat after __standard__   
+	* if( data_list[lowest] > data_list[index] )
+		* lowest = index
 4. swapping two data  
-	* data_list[num] <=> data_list[lowest]   
+	* data_list[index] <=> data_list[lowest]   
 
 
 ## Time Complexity
