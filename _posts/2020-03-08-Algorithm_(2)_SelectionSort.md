@@ -29,34 +29,34 @@ use_math: true
 > Every each time the for loop executes, sort after the first index value from the previous loop  
 > __turn__ : One rotation turn of condition check for all list   
 
-1. two datas for selection sort   
+1. **_two_ datas for selection sort**   
 (3 2)  
 (**2** 3)  
 
 	| data index for comparing  | comparing start point index  | comparing end point index  |
-	| --- | ----------- | --- |
+	| :---: | :---: |:---: |
 	| 0   | 1           | 2   |
 	| 1   | 2           | 2   |
 
-2. tree datas for selection sort  
+2. **_three_ datas for selection sort**  
 (3 4 2)  
 (**2** 4 3)  
 (**2** **3** 4)  
 
 	| data index for comparing  | comparing start point index  | comparing end point index  |
-	| --- | ----------- | --- |
+	| :---: | :---: | :---: |
 	| 0   | 1           | 3   |
 	| 1   | 2           | 3   |
 	| 2   | 3           | 3   |
 
-3. four datas for selection sort  
+3. **_four_ datas for selection sort**  
 (4 5 3 2)  
 (**2** 5 3 4)  
 (**2 3** 5 4)  
 (**2 3 4** 5)  
 
 	| data index for comparing  | comparing start point index  | comparing end point index  |
-	| --- | ----------- | --- |
+	| :---: | :---: | :---: |
 	| 0   | 1           | 4   |
 	| 1   | 2           | 4   |
 	| 2   | 3           | 4   |
