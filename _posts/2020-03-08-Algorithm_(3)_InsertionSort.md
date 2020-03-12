@@ -2,7 +2,7 @@
 layout: post
 title: Algorithm - Insertion Sort (Concept,Pseudocode and C++ code)
 description: (3) Understanding of Insertion sort
-modified: 2020-03-08
+modified: 2020-03-12
 tags: [Algorithm]
 categories: [Algorithm]
 use_math: true
@@ -25,6 +25,8 @@ use_math: true
 		<img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Insertion-sort-example.gif"/>
 	</a>
 </center>
+
+---
 
 ## Code Design   
 > `index`  
@@ -67,21 +69,11 @@ use_math: true
     | 3     | 2     |
 
   ### 4. (<u>2 3 4 5</u>)      
-
+---
 
 ## Pseudocode  
 [![carbon_code_highlighter](/images/carboninsertionsort.png)](https://carbon.now.sh/)
-<!--```
-for(int i = 0; i < 데이터 길이 -1 ; ++i)
-  for(int base = i+1; base != 0 ; ++i)
-  {
-      if(data[base] < data[base-1])
-        swapping two datas
-      else
-        break;
-  }
-```
--->
+
 
 ## Time Complexity
 > two <u>for loops</u> : **$O(n^2)$**  
