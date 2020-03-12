@@ -14,7 +14,7 @@ use_math: true
 
 
 * Insertion sort starts from the **second index**  
-* Compare two value :  <u>data value (**A**)</u> and <u>the data of the prior index of the corresponding data (**key value**)</u>  
+* Compare two value :  <u>data value (<b>A</b>)</u> and <u>the data of the prior index of the corresponding data (<b>key value</b>)</u>  
 * If the key value is smaller
 	* the A value is copied to the later index
 * This is repeated until the key value encounters larger data  
@@ -32,6 +32,7 @@ use_math: true
 
 
 * example of four datas in the list   
+
    ### 1. (5 3 2 4)  
     `1 0`  
     3 5  
