@@ -35,7 +35,7 @@ use_math: true
 
 * example of four datas in the list   
 
-   ### 1. (5 3 2 4)  
+  ### 1. (5 3 2 4)  
     `1 0`  
     3 5  
     (**3 5** 2 4)  
@@ -68,7 +68,8 @@ use_math: true
     | :---: | :---: |
     | 3     | 2     |
 
-  ### 4. (<u>2 3 4 5</u>)      
+  ### 4. (<u>2 3 4 5</u>)   
+
 ---
 
 ## Pseudocode  
