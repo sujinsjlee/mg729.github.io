@@ -69,8 +69,7 @@ use_math: true
     | 3     | 2     |
 
   ### 4. (<u>2 3 4 5</u>)  
-<!--indent-->
----
+
 
 ## Pseudocode  
 [![carbon_code_highlighter](/images/carboninsertionsort.png)](https://carbon.now.sh/)
