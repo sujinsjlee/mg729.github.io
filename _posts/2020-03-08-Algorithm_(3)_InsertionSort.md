@@ -1,6 +1,5 @@
 ---
 layout: post
-published: false
 title: Algorithm - Insertion Sort (Concept,Pseudocode and C++ code)
 description: (3) Understanding of Insertion sort
 modified: 2020-03-08
@@ -30,36 +29,43 @@ use_math: true
 ## Code Design   
 > `index`  
 > value  
-* four datas 
-  1. <u>(5 3 2 4)</u>  
-  `1 0`  
-   3 5  
-  (**3 5** 2 4)  
-      | base data index  | compared data index |
-      | :---: | :---: |
-      | 1     | 0     |
-  2. <u>(**3 5** 2 4)</u>  
-  `2 1`   
-   2 5  
-  (3 **2 5** 4)  
-  `1 0`  
-   2 3  
-  (**2 3** 5 4)   
-      | base data index  | compared data index |
-      | :---: | :---: |
-      | 2     | 1     |
-  3. <u>(**2 3 5** 4)</u>  
-  `3 2`   
-   4 5  
-  (2 3 **4 5**)  
-  `2 1`   
-   4 3  
-  ~~`1 0`~~  
-      | base data index  | compared data index |
-      | :---: | :---: |
-      | 3     | 2     |
-  
-  4. <u>(**2 3 4 5**)</u>    
+
+
+* example of four datas in the list   
+   ### 1. (5 3 2 4)  
+    `1 0`  
+    3 5  
+    (**3 5** 2 4)  
+
+    | base data index  | compared data index |
+    | :---: | :---: |
+    | 1     | 0     |
+
+  ### 2. (<u>3 5</u> 2 4)  
+    `2 1`   
+    2 5  
+    (3 **2 5** 4)  
+    `1 0`  
+    2 3  
+    (**2 3** 5 4)  
+
+    | base data index  | compared data index |
+    | :---: | :---: |
+    | 2     | 1     |
+
+  ### 3. (<u>2 3 5</u> 4)  
+    `3 2`   
+    4 5  
+    (2 3 **4 5**)  
+    `2 1`   
+    4 3  
+    ~~`1 0`~~    
+
+    | base data index  | compared data index |
+    | :---: | :---: |
+    | 3     | 2     |
+
+  ### 4. (<u>2 3 4 5</u>)      
 
 
 ## Pseudocode  
