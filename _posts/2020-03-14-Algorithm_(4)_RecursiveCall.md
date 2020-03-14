@@ -42,7 +42,6 @@ bool isPalindrome(char * str_s, int s, int e)
 		return false;
 	
 	if(e - s > 1) // in case of len is even
-	//if( end - begin > 1 )
 		return isPalindrome(str_s, s+1, e-1);
 	
 	return true;
