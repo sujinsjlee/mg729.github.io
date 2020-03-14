@@ -8,8 +8,8 @@ categories: [Algorithm]
 ---
 
 ## Recursive Call 
-> ** The same function is called in the function **  
-> Functions are managed internally as ** stack **  
+> **The same function is called in the function**  
+> Functions are managed internally as **stack**  
 
 # Practice by C++ code  
 
@@ -116,4 +116,3 @@ int main()
 	cout << count << endl;
 }
 ```
-
