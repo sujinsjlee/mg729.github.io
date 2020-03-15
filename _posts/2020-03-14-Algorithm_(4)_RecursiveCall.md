@@ -88,6 +88,9 @@ There are 7 ways to express the integer 4 as a combination of 1, 2, and 3 as fol
 > f(n) = f(n-1) + f(n-2) + f(n-3)  
 
 
+![recursive_img](images/recursiveimg.png)
+
+
 ```cpp
 #include<cstdio>
 #include<iostream>
