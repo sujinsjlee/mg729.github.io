@@ -18,11 +18,13 @@ menu:
     url: '/'
   - title: 'About'
     url: '/about'
-  - title: 'Tags'
-    url: '/tags'
   - title: 'Categories'
     url: '/categories'
     type: 'categories'
+  - title: 'Posts'
+    url: '/posts'
+  #- title: 'Tags'
+  #  url: '/tags'
 
 # Owner/author information
 owner:
@@ -31,7 +33,7 @@ owner:
   avatar:         images/avatar.jpg
   bio:            "Be useful and Be kind"
   email:          iammg729@gmail.com
-  github: mg729
+  github:         mg729
 
 social:
   - title: "github"
