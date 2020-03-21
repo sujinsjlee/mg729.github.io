@@ -5,11 +5,12 @@ description: (5) Understanding of DP & Divide and Conqure algorithm
 modified: 2020-03-16
 tags: [Algorithm]
 categories: [Algorithm]
+use_math: true
 ---
 
 ## Dynamic Programming and Divide and Conquer
 
-> <u>Dynamic Programming (often called **DP**)</u>  
+> <u>Dynamic Programming (often called <b>DP</b>)</u>  
 > Algorithm that solves the problem of the small input size first  
 > And then, solves the problem of the larger size, and finally solves the whole problem by using the solution of the partial problem
 
@@ -52,6 +53,7 @@ categories: [Algorithm]
 F_0=0  
 F_1=1  
 F_n=F_{n-1}+F_{n-2}\qquad(n\in\{2,3,4,\dots\})  
+
 
 1. Divide and Conquer  
 ```cpp
