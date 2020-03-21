@@ -50,12 +50,13 @@ categories: [Algorithm]
 > *0,1,1,2,3,5,8,13,21,34,55,89,144,...*  
 
 
-F_0=0  
-F_1=1  
-F_n=F_{n-1}+F_{n-2}\qquad(n\in\{2,3,4,\dots\})  
+$F_0=0$  
+$F_1=1$  
+$F_n=F_{n-1}+F_{n-2}\qquad(n\in\{2,3,4,\dots\})$  
 
 
-1. Divide and Conquer  
+### Divide and Conquer  
+
 ```cpp
 #include<iostream>
 #include<cstdio>
@@ -82,8 +83,7 @@ int main()
 }
 ```
 
-
-2. Dynamic Programming
+### Dynamic Programming
 
 ```cpp
 #include<iostream>
