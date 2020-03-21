@@ -2,10 +2,10 @@
 layout: post
 title: Algorithm - Dynamic Programming & Divide and Conqure (Concept and C++ examples)
 description: (5) Understanding of DP & Divide and Conqure algorithm
+use_math: true
 modified: 2020-03-16
 tags: [Algorithm]
 categories: [Algorithm]
-use_math: true
 ---
 
 ## Dynamic Programming and Divide and Conquer
