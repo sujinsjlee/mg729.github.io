@@ -40,7 +40,7 @@ categories: [Algorithm]
 	- Dynamic programming
 		- Partial problems are duplicated and recycled when solving high-level problems
 		- Using the Memoization technique (used as an optimization technique to save and recycle answers to partial problems)
-	- Split conquest
+	- Divide and Conquer
 		- Partial problems do not overlap with each other
 		- No Memoization technique
 
