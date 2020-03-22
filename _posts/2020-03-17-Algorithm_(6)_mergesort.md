@@ -30,18 +30,22 @@ Using **Recursive call**
 
 
 ## Analysis
+
+
 * When there are four datas  
-   - data_list = **[1, 9, 3, 2]**  
-     - First, divide by **[1, 9]**, **[3, 2]**  
-     - The front part is divided into **[1]** and **[9]**  
-     - Sort and merge **[1, 9]**  
-     - Next **[3, 2]** is divided into **[3]** and **[2]**  
-     - Sort and merge **[2, 3]**  
-     - Now merge **[1, 9]** and **[2, 3]** together  
-       - Since 1 <2 **[1]**  
-       - Since 9> 2 **[1, 2]**  
-       - Since 9> 3 **[1, 2, 3]**  
-       - Since there are only 9, **[1, 2, 3, 9]**  
+- data_list = **[1, 9, 3, 2]**  
+	- First, divide by **[1, 9]**, **[3, 2]**  
+	- The front part is divided into **[1]** and **[9]**  
+	- Sort and merge **[1, 9]**  
+	- Next **[3, 2]** is divided into **[3]** and **[2]**  
+	- Sort and merge **[2, 3]**  
+	- Now merge **[1, 9]** and **[2, 3]** together  
+		- Since 1 <2 **[1]**  
+		- Since 9> 2 **[1, 2]**  
+		- Since 9> 3 **[1, 2, 3]**  
+		- Since there are only 9, **[1, 2, 3, 9]**  
+{: .notice--info}
+
 
 ## Time Complexity
 > **$O(n log n)$**  
