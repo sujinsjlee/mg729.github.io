@@ -63,8 +63,8 @@ int main()
 </center>
 
 * Binary search
-	* ** Divide **: Divide the data list into two sublists
-	* ** Conqure **
+	* **Divide**: Divide the data list into two sublists
+	* **Conqure**
 		* data > Medium value: Search for the number to search in the sub-list at the back
 		* data < Medium value: Search for the number to search in the previous sub-list
 
