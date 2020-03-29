@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Algorithm - Sequential Search and Binary Search (Concept and C++)
-description: (8) Understanding of quick sort algorithm
+description: (8) Understanding of Sequential Search and Binary Search
 modified: 2020-03-23
 tags: [Algorithm]
 categories: [Algorithm]
