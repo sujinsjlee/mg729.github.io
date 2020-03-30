@@ -106,8 +106,8 @@ int main()
 	return 0;
 }
 ```
-* **int visited[7];**   
+`int visited[7];`   
 	* all elements are initialized with 0  
-* <code><b>vector<int> need_visit[8];</b></code>   
+`<code><b>vector<int> need_visit[8];`  
 	* index starts from *1*  
 
