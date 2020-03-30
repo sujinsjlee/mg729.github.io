@@ -14,8 +14,8 @@ use_math: true
 
 
 <center>
-	<a href="https://en.wikipedia.org/wiki/Breadth-first_search">
-		<img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Animated_BFS.gif"/>
+	<a href="https://en.wikipedia.org/wiki/Depth-first_search">
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Depth-first-tree.svg/450px-Depth-first-tree.svg.png"/>
 	</a>
 </center>
 
@@ -26,7 +26,7 @@ use_math: true
 		- need_visit is implemented with **stack**  
 		- visited is implemented with **queue**  
 ​
-> Note that the BFS data structure uses two queues, while **DFS uses a stack and a queue.**  
+- Note that the BFS data structure uses two queues, while **DFS uses a stack and a queue.**  
 
 
 ## Time Complexity
@@ -102,5 +102,5 @@ int main()
 }
 ```
 
-* * **Recursive call works as Stack**  
+* **Recursive call works as <u>Stack</u>**  
 
