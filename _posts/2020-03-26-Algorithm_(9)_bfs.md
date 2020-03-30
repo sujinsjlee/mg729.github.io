@@ -108,6 +108,6 @@ int main()
 ```
 * **int visited[7];**   
 	* all elements are initialized with 0  
-* **vector<int> need_visit[8];**   
+* <code><b>vector<int> need_visit[8];</b></code>   
 	* index starts from *1*  
 
