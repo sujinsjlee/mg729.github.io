@@ -57,6 +57,34 @@ int main()
 }
 ```
 
+
+```cpp
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+int main()
+{
+	stack <int> s;
+	s.push(1);
+	s.push(2);
+	s.push(3);
+	
+	s.pop();
+	s.push(4);
+	s.pop();
+	while(!s.empty())
+	{
+		cout << s.top() << " ";
+		s.pop();
+	}
+	
+	//2 1
+	return 0;
+}
+```
+
 ##  stack의 활용   
 프로세스에서 함수 동작 방식 (함수 호출에 관여)  
 스택 구조는 프로세스 실행 구조의 기본  
