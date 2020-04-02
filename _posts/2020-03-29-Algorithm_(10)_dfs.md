@@ -22,10 +22,6 @@ use_math: true
 
 ## DFS Algorithm  
 - Utilize *Queue* and *Stack*    
-	- Create two queues: need_visit, visited  
-		- need_visit is implemented with **stack**  
-		- visited is implemented with **queue**  
-​
 - Note that the BFS data structure uses two queues, while **DFS uses a stack and a queue.**  
 
 
