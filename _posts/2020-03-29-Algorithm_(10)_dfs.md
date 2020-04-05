@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Algorithm - DFS (Concept, Time Complexity and C++)
-description: (8) Understanding of DFS
+description: (10) Understanding of DFS
 modified: 2020-03-29
 tags: [Algorithm]
 categories: [Algorithm]

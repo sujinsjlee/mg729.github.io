@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Algorithm - BFS (Concept, BFS using queue and Time Complexity)
-description: (8) Understanding of BFS
+description: (9) Understanding of BFS
 modified: 2020-03-26
 tags: [Algorithm]
 categories: [Algorithm]
