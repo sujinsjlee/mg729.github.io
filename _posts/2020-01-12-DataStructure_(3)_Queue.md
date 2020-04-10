@@ -1,20 +1,20 @@
 ---
 layout: post
-title: Data Structure - Queue (Concept and C++ code)
+title: Data Structure - Queue (Concept and C++ STL, Priority queue)
 description: (3) Understanding of Queue
 modified: 2020-01-12
 tags: [Data Structure, Queue]
 categories: [DataStructure]
 ---
 
-##  Queue (큐의 구조)
+##  Queue
 >**First In First Out(FIFO)**
 
-가장 먼저 넣은 데이터를 가장 먼저 꺼낼 수 있는 구조  
-스택과 꺼내는 순서가 반대
+Linear Data Structure that can take out the data in order of FIFO  
+Take out data method is opposite to the stack  
 <ul>
- <li> Enqueue : 큐에 데이터를 넣는 기능 </li>
- <li> Dequeue : 큐에 데이터를 빼는 기능 </li>
+ <li> Enqueue : load data into the queue </li>
+ <li> Dequeue : substract data in the queue </li>
 </ul>
 
 ##  queue - C++ STL Container  
@@ -28,7 +28,7 @@ int main()
 {
     queue<int> q1;
 
-    q1.push(10); // push는 push_back 호출.
+    q1.push(10); // call push_back
     q1.push(20);
     q1.push(30);
     
@@ -73,8 +73,9 @@ int main()
 
 ##  Priority Queue  
 [c++ priority queue](https://en.cppreference.com/w/cpp/container/priority_queue).  
-* 각각의 데이터를 넣을 때마다 데이터의 우선순위번호를 함께넣음  
-* 데이터를 넣을때 매겨져있던 우선순위에따라 데이터를 추출하는 순서가 달라지는 구조  
+
+* When each data is inserted, the priority number of the data is put together   
+* The structure in which the order of extracting data differs according to the priority given when inserting data  
 {% highlight c++ %}
 #include <iostream>
 #include <queue>
@@ -97,5 +98,5 @@ int main()
 {% endhighlight %}
 
 ##  큐의 활용  
-* 운영체제에서 멀티태스킹을 위해서 큐가 활용  
-* 서로 다른 속도로 실행되는 두 프로세스 스케쥴링 간의 상호작용을 조화시키는 버퍼 역할
+* Queue is used for multitasking in the operating system  
+* Like buffer, queue coordinates the interaction between two process scheduling running at different speeds  
