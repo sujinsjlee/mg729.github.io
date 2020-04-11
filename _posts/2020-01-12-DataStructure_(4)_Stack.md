@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Structure - Stack (Concept and C++ code)
+title: Data Structure - Stack (Concept and STL, C++ code)
 description: (4) Understanding of Stack
 modified: 2020-01-13
 tags: [Data Structure, Stack]
@@ -8,30 +8,28 @@ categories: [DataStructure]
 ---
 
 ##  Stack
-> **가장 나중에 넣은 데이터를 가장 먼저 꺼낼 수 있는 구조**  
-> stack은  <u>배열, 연결리스트</u>를 이용하여 구현
-
-Last In First Out(LIFO)  
+> **Last In First Out**  
+> Stack is a linear data structure which follows a LIFO order  
+> stack is implemented with  <u>array or linked list</u>  
 
 <ul>
- <li> push() : 데이터를 스택에 넣기 </li>
- <li> pop() : 데이터를 스택에서 꺼내기 </li>
+ <li> push() : Push data into the stack </li>
+ <li> pop() :  Removes the most recently added element from the stack </li>
 </ul>
 
-##  Stack 의 장단점
->stack 구현을 **배열**으로 했다고 가정하는 경우 
-1. stack 의 장점  
-* 구조가 단순, 구현이 쉽다.  
-* 데이터 저장/읽기 속도가 빠르다  
+##  Stack's advantage and disadvantage
+> Assuming that the stack is implemented with **array**  
+1. Advantage of Stack  
+* Simple structure, easy to implement  
+* Fast data storage and reading  
 
-2. stack의 단점  
-* 데이터 최대 갯수를 미리 정해야한다.  
-* 저장공간의 낭비가 발생할 수 있음 (최대 개수가 정해져있는데 그 공간을 모두 활용하지 않는 경우)  
-
+2. Disadvantage of stack  
+* The maximum number of data should be determined in advance.  
+* Storage space may be wasted (if the maximum number is fixed but not all of the space is used)  
 
 ##  Stack 과 Queue의 공통점 
-> 데이터를 제한적으로 접근할 수 잇는 구조  
-> 한쪽 끝에서만 데이터를 넣거나 뺄 수 있는 구조  
+> Structure that has restriction to access to the data  
+> Structure that can only insert or subtract data at one end  
 
 ##  stack - C++ Container library  
 [c++ stack](https://en.cppreference.com/w/cpp/container/stack).  
@@ -85,6 +83,7 @@ int main()
 }
 ```
 
-##  stack의 활용   
-프로세스에서 함수 동작 방식 (함수 호출에 관여)  
-스택 구조는 프로세스 실행 구조의 기본  
+##  Usage or Stack   
+* How the function works in the process   
+	* stack is used when a  **function calls** works   
+* The stack structure is the basis of the **process execution**  
