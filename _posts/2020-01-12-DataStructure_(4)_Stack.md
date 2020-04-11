@@ -7,7 +7,7 @@ tags: [Data Structure, Stack]
 categories: [DataStructure]
 ---
 
-##  Stack (스택의 구조)
+##  Stack
 > **가장 나중에 넣은 데이터를 가장 먼저 꺼낼 수 있는 구조**  
 > stack은  <u>배열, 연결리스트</u>를 이용하여 구현
 
