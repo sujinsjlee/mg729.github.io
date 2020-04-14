@@ -12,9 +12,10 @@ categories: [Algorithm]
 	- Each object can be expressed as weight (w) and value (v)  
 	- Since the object can be split, a part of the object can be put in a backpack, so it is called **Fractional** Knapsack Problem  
 		- In contrast to the Fractional Knapsack Problem, there is also a backpack problem in which objects cannot be split into pieces (called 0/1 Knapsack Problem)  
-#### C++
 
-```cpp
+## C++
+
+```c++
 #include<iostream>
 #include<algorithm>
 #include<vector>

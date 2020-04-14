@@ -27,7 +27,7 @@ categories: [DataStructure]
 * The maximum number of data should be determined in advance.  
 * Storage space may be wasted (if the maximum number is fixed but not all of the space is used)  
 
-##  Stack 과 Queue의 공통점 
+##  Common point - Stack and Queue 
 > Structure that has restriction to access to the data  
 > Structure that can only insert or subtract data at one end  
 
