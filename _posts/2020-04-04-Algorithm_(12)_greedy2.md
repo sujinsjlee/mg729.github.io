@@ -21,7 +21,7 @@ categories: [Algorithm]
 #include<vector>
 using namespace std;
 
-vector<pair<int, int>> data_list {{10,10}, {15,12}, {20,10}, {25,8},{30,5}};
+vector<pair<int, int>> data_list { {10,10}, {15,12}, {20,10}, {25,8},{30,5} };
 
 bool compare(pair<int, int> a, pair<int, int> b)
 {
