@@ -28,8 +28,9 @@ v[4] = 77;
 
 -  you'd better take the habit to use `at`, less idiomatic, but bound-checking is priceless
 
-- A much better way is to use `at(...)`. This will automatically check for out of bounds behaviour and break throwing an **std::out_of_range**. So in the case when we have
-```cpp
+- A much better way is to use `at(...)`. This will automatically check for out of bounds behaviour and break throwing an **std::out_of_range**.  
+
+```c++
 v.at(10) = 9;
 ```
 - We will get:  
