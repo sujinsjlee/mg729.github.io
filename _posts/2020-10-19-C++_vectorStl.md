@@ -2,7 +2,7 @@
 layout: post
 title: C++ STL - vector - modifying data by operator[], erase(), insert() 
 description: "C++ STL for sorting"
-modified: 2020-03-30
+modified: 2020-10-19
 tags: [C++]
 categories: [C++]
 ---
