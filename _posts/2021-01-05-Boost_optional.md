@@ -2,7 +2,7 @@
 layout: post
 title: When to use boost::Optional?
 description: "Introduction of Boost::optional"
-modified: 2020-10-24
+modified: 2021-01-05
 tags: [Boost]
 categories: [Boost]
 ---
@@ -17,6 +17,7 @@ categories: [Boost]
 
 
 - Empty return data value
+
 ```c++
 #include<iostream>
 #include<fstream>
@@ -41,6 +42,7 @@ int main() {
 ```
 
 - Utilize optional to deal with no value data
+
 ```c++
 #include<iostream>
 #include<fstream>
@@ -80,6 +82,7 @@ int main() {
 
 
 ## boost::make_optionl
+
 ```c++
 optional<T (not a ref)> make_optional( T const& v )
 optional<T (not a ref)> make_optional( bool condition, T const& v )
@@ -88,6 +91,7 @@ optional<T (not a ref)> make_optional( bool condition, T const& v )
 - Returns: optional<T>(condition,v) for the deduced type T of v.
 
 ## boost::none
+
 ```c++
 namespace boost {
 class none_t {/* see below */};
