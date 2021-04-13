@@ -92,7 +92,7 @@ optional<T (not a ref)> make_optional( bool condition, T const& v )
 
 - Example 1
     - when using make_optional - can utilize condition
-    - Creates an optional<T> initialized with 'val' IFF cond is true, otherwise creates an **uninitialized** **optional**  
+    - Creates an optional<T> initialized with 'val' IFF cond is true, otherwise creates an `uninitialized optional`  
 
     
 ```cpp
