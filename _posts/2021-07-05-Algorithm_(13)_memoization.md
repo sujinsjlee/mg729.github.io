@@ -2,21 +2,22 @@
 layout: post
 title: Algorithm - memoization
 description: "About memoization"
-modified: 2021-06-11
+modified: 2021-07-06
 tags: [Algorithm]
 categories: [Algorithm]
 ---
 ## memoization
--  **메모이제이션(memoization)** 은 컴퓨터 프로그램이 동일한 계산을 반복해야 할 때, 이전에 계산한 값을 메모리에 저장함으로써 동일한 계산의 중복 수행을 제거하여 프로그램 실행 속도를 빠르게 하는 기술이다.
-
-- 대표 예제 
-    - **이항계수**
+- **Memoization** is a technique that speeds up program execution by eliminating duplicate execution of the same calculation by storing previously calculated values in memory when a computer program needs to repeat the same calculations.
+- Example 
+    - **binomial coefficient**
     - **nCr = n-1Cr + n-1Cr-1**
     - **nCn == nC0** : **1**
-        - *n개 중 n개 모두를 선택하는 경우의수*와 *n개 중 아무것도 고르지 않는 경우의 수* 모두 1가지씩있으므로 nCn과 nC0은 1의 값을 가짐
-    - 이미 계산된 조합의 결과는 중복계산하지 않도록 코딩
+		- *Number of cases of selecting all n out of n* 
+		- *Number of cases of selecting none of n* 
+			- Since above there is only 1 case for each, nCn and nC0 have a value of 1.
+    - Utilize the result of the combination already calculated so that it is not redunduntly calculated twice
 
-- 이항계수
+- binomial coefficient <!--이항 계수-->
 
 ```c++
 #include<bits/stdc++.h>
