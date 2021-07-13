@@ -5,6 +5,7 @@ description: "About Class Inheritance and code analyzation"
 modified: 2021-06-11
 tags: [C++]
 categories: [C++]
+publish: false
 ---
 
 ## C++ Class Inheritance
@@ -30,7 +31,7 @@ class TaskHandler: public FeatureHandlerBase
 // TaskHandler.cc
 void TaskHandler::setFeatureGenericResponsible(FeatureGenericResponsible* featureResponsible)
 {
-  m_featureResponsible = featureResponsible; // featureResponsible will be set as TaskHandler
+  m_featureResponsible = featureResponsible; // featureResponsible will be set as LocalDataBaseImpl
   m_LocalDataData = m_featureResponsible->getData();
 }
 
@@ -46,7 +47,7 @@ class LocalDataBaseImpl: public LocalData,
 void LocalDataBaseImpl::initFeatureHandler(void)
 {
   FeatureHandlerBase* taskHandler = new TaskHandler(); // create TaskHandler object
-  taskHandler->setFeatureGenericResponsible(static_cast<FeatureGenericResponsible*>(this)); // this : TaskHandler object
+  taskHandler->setFeatureGenericResponsible(static_cast<FeatureGenericResponsible*>(this)); // this : LocalDataBaseImpl object
   m_featureHandlerMap.insert(std::pair<FeatureTypeE, FeatureHandlerBase*>(FEAT_TYPE_AAA, taskHandler));
 }
 ```
