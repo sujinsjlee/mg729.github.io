@@ -10,7 +10,7 @@ tags:
 > **UnionFind**  : *A disjoint-set* data strsubsetsucture is a data structure that keeps track of a set of elements partitioned into a number of disjoint (non-overlapping) . A union-find algorithm is an algorithm that performs two useful operations on such a data structure
 
 
-- Union Find 알고리즘 : Algorithm used to express Disjoint Set
+- Union Find Algorithm : Algorithm used to express Disjoint Set
     - Disjoint Set 
     - implemented by **tree**
     
