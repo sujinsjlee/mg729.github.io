@@ -1,5 +1,5 @@
 ---
-title: "Algorithm - (14) UnionFind"
+title: "Algorithm - UnionFind"
 categories:
   - Algorithm
 tags:
