@@ -2,7 +2,7 @@
 layout: post
 title: C++ preprocessor
 description: "C++ preprocessor"
-modified: 2021-08-222
+modified: 2021-08-22
 tags: [C++]
 categories: [C++]
 ---
@@ -38,20 +38,21 @@ void main()
 }
 ```
 
-- 코드가 실행되는 과정
-    - **전처리기** > 컴파일러 > 링커 > 실행파일 생성
-    - 컴파일전에 실행되는 부분이 preprocessor
+- Code Execution
+    - **Preprocessor** > Compiler > Linker > Generate Executable file
+    - the preprocessor is executed before compiling
 
-- 전처리문은 앞에 **#**을 붙인다.
-- 전처리문 끝에 **;** semicolon을 붙이지 않는다
+- Preprocessing statements are defined by **#**.
+- Do not add a **;** semicolon at the end of the preprocessing statement.
 
-### define 
-- `#define` 키워드 내용 : 내용을 키워드로 사용할 수 있게 선언
-- macro에 활용됨 
-  - macro 선언할 때 연산자 우선순위 고려하여 괄호 처리
+### define
+- `#define` keyword : Declare content to be used as a keyword
+- Used for macro
+   - When declaring macro, parentheses are processed considering operator precedence
 
-### undef 
-- `#undef` : #define으로 선언된 키워드를 삭제
+### undef
+- `#undef` : delete keywords declared with #define
+
 
 
 ```c++
@@ -83,20 +84,20 @@ void main()
 #endif
 ```
 
+
 ### ifndef
-- `#ifndef`: 키워드가 #define문으로 선언되어있지 않으면 참
-  - 중복정의를 막아줌 
+- `#ifndef`: true if the keyword is not declared with a #define statement
+   - Prevents duplicate definitions
     - avoid redefinition
     - avoid predefinition
-  - EXAMPLE
-    - **#ifndef _TEST_H_** : _TEST_H_ 키워드가 선언되어있는지 확인
-    - **#define _TEST_H_** : _TEST_H_ 키워드가 없다면 _TEST_H_ 을 define 해줌
-    - /// test code
+   - EXAMPLE
+    - **#ifndef _TEST_H_** : Check if the `_TEST_H_` keyword is declared
+    - **#define _TEST_H_** : If there is no `_TEST_H_` keyword, define `_TEST_H_` 
+    - `/// test code`
     - #endif
 
-    - 추후에 다시 해당 ///test code를 접근할때 
-    - #ifndef _TEST_H_ 이 조건에 의해 이미 _TEST_H_ 가 정의되어있으므로 아래 define 문을 거치지 않게 됩니다.
-
+    - When accessing the `///test code` again later
+    - Because `_TEST_H_` is already defined by the condition(**#ifndef _TEST_H_**), the define statement below is not processed.
 
 ```c++
 // header.h
@@ -104,7 +105,9 @@ void main()
 #pragma once
 ```
 
+
 ### pragma once
-- `#pragma` 명령 : 명령에 따라 특수한 기능을 한다. 
-- **컴파일러에 종속적** 
-- **#pragma once** : 이 헤더파일은 한번만 include시켜라
+- `#pragma` command: It performs a special function according to the command.
+- **Compiler dependent**
+- **#pragma once** : Include this header file only once
+
