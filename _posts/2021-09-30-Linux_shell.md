@@ -23,7 +23,7 @@ categories: [Linux]
 # Loop
 - example
 
-```
+```shell
 #!/bin/bash
 
 while [ $n -le 10 ] # (( $n <= 10 ))
@@ -39,14 +39,14 @@ done
 
 - `vi [shell file name]` 
 
-```console
+```shell
 $ vi atest_100
 ```
 
-### atest_100.ksh 
+### atest_100 
 - line 1 : `#!/bin/bash`
 
-```
+```shell
 #!/bin/sh
 
 int=0
@@ -61,7 +61,7 @@ done
 ### Grant permission to execute shell file
 - `ls -al` : -rw-r--r--  --> -rwxr-xr-x
 
-```console
+```shell
 $ chmod 755 atest_100
 ```
 
@@ -71,6 +71,6 @@ $ chmod 755 atest_100
     - bash atest_100
     - run test 100 times
 
-```console
+```shell
 $ sh atest_100
 ```
