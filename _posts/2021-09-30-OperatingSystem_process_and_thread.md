@@ -18,7 +18,9 @@ categories: [OperatingSystem]
     - prgram counter (PC)
     - CPU register contents
     - PCB(Process Control Block)
-<!--“컴퓨터에서 연속적으로 실행되고 있는 컴퓨터 프로그램”
+
+
+<!--  “컴퓨터에서 연속적으로 실행되고 있는 컴퓨터 프로그램”
 메모리에 올라와 실행되고 있는 프로그램의 인스턴스(독립적인 개체)
 
 운영체제로부터 시스템 자원을 할당받는 작업의 단위
@@ -31,7 +33,9 @@ Code, Data, Stack, Heap의 구조로 되어 있는 독립된 메모리 영역
 기본적으로 프로세스당 최소 1개의 스레드(메인 스레드)를 가지고 있다.
 각 프로세스는 별도의 주소 공간에서 실행되며, 한 프로세스는 다른 프로세스의 변수나 자료구조에 접근할 수 없다.
 한 프로세스가 다른 프로세스의 자원에 접근하려면 프로세스 간의 통신(IPC, inter-process communication)을 사용해야 한다.
-Ex. 파이프, 파일, 소켓 등을 이용한 통신 방법 이용-->
+Ex. 파이프, 파일, 소켓 등을 이용한 통신 방법 이용  -->
+
+
 
 - An instance of a program that is loaded into memory and running (independent object)
 
