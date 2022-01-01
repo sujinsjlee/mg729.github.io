@@ -5,7 +5,7 @@ permalink: /about/
 comments: false
 ---
 
-<center><h2> Good day fellow readers and welcome to my tech study blog ! </h2></center>
+<center><h2>Good day fellow readers and welcome to my tech study blog!</h2></center>
 
 <div class="read-more">
   <div class="read-more-header">
@@ -30,6 +30,3 @@ comments: false
     </div>
   </div>
 </div>
-
-:tada:
-
