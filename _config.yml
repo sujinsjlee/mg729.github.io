@@ -1,4 +1,4 @@
-title:            Tech Blog
+title:            Tech Study Blog
 description:      Study note of Software Engineer
 
 #disqus
@@ -31,15 +31,15 @@ owner:
   name:           MG
   site:           https://github.com/mg729
   avatar:         images/avatar.jpg
-  bio:            "Be useful and Be kind"
+  bio:            "Be useful and Be kind\nEVERY DAY IS A NEW DAY\nGetting better every day\nStand-up\nSelf-made\nSelf-sufficient\nIf you can't explain it simply, you don't understand it well enough\nKEEP GOING"
   email:          iammg729@gmail.com
   github:         mg729
 
 social:
   - title: "github"
     url: "https://github.com/mg729"
-#  - title: "linkedin"
-#    url: "https://br.linkedin.com/in/aronbordin"
+  - title: "linkedin"
+    url: "https://www.linkedin.com/in/sujin-lee-b87507221/"
 #  - title: "youtube"
 #    url: "https://www.youtube.com/channel/UCfnSek-9HPWOx5e2pH7VFgg"
 
